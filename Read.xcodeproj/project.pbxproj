@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		21B41D0F2A2396C6008E3FE2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D0E2A2396C6008E3FE2 /* AppDelegate.m */; };
-		21B41D122A2396C6008E3FE2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D112A2396C6008E3FE2 /* ViewController.m */; };
+		21B41D0F2A2396C6008E3FE2 /* JBRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D0E2A2396C6008E3FE2 /* JBRAppDelegate.m */; };
 		21B41D142A2396CB008E3FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B41D132A2396CB008E3FE2 /* Assets.xcassets */; };
 		21B41D172A2396CB008E3FE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B41D152A2396CB008E3FE2 /* Main.storyboard */; };
 		21B41D192A2396CB008E3FE2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D182A2396CB008E3FE2 /* main.m */; };
 		21B41D242A2396CB008E3FE2 /* ReadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D232A2396CB008E3FE2 /* ReadTests.m */; };
 		21B41D2E2A2396CB008E3FE2 /* ReadUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D2D2A2396CB008E3FE2 /* ReadUITests.m */; };
 		21B41D302A2396CB008E3FE2 /* ReadUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D2F2A2396CB008E3FE2 /* ReadUITestsLaunchTests.m */; };
+		21B41D3E2A23A729008E3FE2 /* JBRReaderWindow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B41D3D2A23A729008E3FE2 /* JBRReaderWindow.storyboard */; };
+		21B41D412A23AB51008E3FE2 /* JBRReaderWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D402A23AB51008E3FE2 /* JBRReaderWindowController.m */; };
+		21B41D442A23ABA7008E3FE2 /* JBRReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D432A23ABA7008E3FE2 /* JBRReaderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +38,8 @@
 
 /* Begin PBXFileReference section */
 		21B41D0A2A2396C6008E3FE2 /* Read.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Read.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		21B41D0D2A2396C6008E3FE2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		21B41D0E2A2396C6008E3FE2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		21B41D102A2396C6008E3FE2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		21B41D112A2396C6008E3FE2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		21B41D0D2A2396C6008E3FE2 /* JBRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRAppDelegate.h; sourceTree = "<group>"; };
+		21B41D0E2A2396C6008E3FE2 /* JBRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAppDelegate.m; sourceTree = "<group>"; };
 		21B41D132A2396CB008E3FE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21B41D162A2396CB008E3FE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21B41D182A2396CB008E3FE2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -49,6 +49,11 @@
 		21B41D292A2396CB008E3FE2 /* ReadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B41D2D2A2396CB008E3FE2 /* ReadUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadUITests.m; sourceTree = "<group>"; };
 		21B41D2F2A2396CB008E3FE2 /* ReadUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadUITestsLaunchTests.m; sourceTree = "<group>"; };
+		21B41D3D2A23A729008E3FE2 /* JBRReaderWindow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JBRReaderWindow.storyboard; sourceTree = "<group>"; };
+		21B41D3F2A23AB51008E3FE2 /* JBRReaderWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRReaderWindowController.h; sourceTree = "<group>"; };
+		21B41D402A23AB51008E3FE2 /* JBRReaderWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRReaderWindowController.m; sourceTree = "<group>"; };
+		21B41D422A23ABA7008E3FE2 /* JBRReaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRReaderViewController.h; sourceTree = "<group>"; };
+		21B41D432A23ABA7008E3FE2 /* JBRReaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRReaderViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,14 +104,13 @@
 		21B41D0C2A2396C6008E3FE2 /* Read */ = {
 			isa = PBXGroup;
 			children = (
-				21B41D0D2A2396C6008E3FE2 /* AppDelegate.h */,
-				21B41D0E2A2396C6008E3FE2 /* AppDelegate.m */,
-				21B41D102A2396C6008E3FE2 /* ViewController.h */,
-				21B41D112A2396C6008E3FE2 /* ViewController.m */,
+				21B41D0D2A2396C6008E3FE2 /* JBRAppDelegate.h */,
+				21B41D0E2A2396C6008E3FE2 /* JBRAppDelegate.m */,
 				21B41D132A2396CB008E3FE2 /* Assets.xcassets */,
 				21B41D152A2396CB008E3FE2 /* Main.storyboard */,
 				21B41D182A2396CB008E3FE2 /* main.m */,
 				21B41D1A2A2396CB008E3FE2 /* Read.entitlements */,
+				21B41D3C2A23A6C7008E3FE2 /* Reader Window */,
 			);
 			path = Read;
 			sourceTree = "<group>";
@@ -126,6 +130,18 @@
 				21B41D2F2A2396CB008E3FE2 /* ReadUITestsLaunchTests.m */,
 			);
 			path = ReadUITests;
+			sourceTree = "<group>";
+		};
+		21B41D3C2A23A6C7008E3FE2 /* Reader Window */ = {
+			isa = PBXGroup;
+			children = (
+				21B41D422A23ABA7008E3FE2 /* JBRReaderViewController.h */,
+				21B41D432A23ABA7008E3FE2 /* JBRReaderViewController.m */,
+				21B41D3F2A23AB51008E3FE2 /* JBRReaderWindowController.h */,
+				21B41D402A23AB51008E3FE2 /* JBRReaderWindowController.m */,
+				21B41D3D2A23A729008E3FE2 /* JBRReaderWindow.storyboard */,
+			);
+			path = "Reader Window";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +249,7 @@
 			files = (
 				21B41D142A2396CB008E3FE2 /* Assets.xcassets in Resources */,
 				21B41D172A2396CB008E3FE2 /* Main.storyboard in Resources */,
+				21B41D3E2A23A729008E3FE2 /* JBRReaderWindow.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,9 +274,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21B41D122A2396C6008E3FE2 /* ViewController.m in Sources */,
+				21B41D442A23ABA7008E3FE2 /* JBRReaderViewController.m in Sources */,
+				21B41D412A23AB51008E3FE2 /* JBRReaderWindowController.m in Sources */,
 				21B41D192A2396CB008E3FE2 /* main.m in Sources */,
-				21B41D0F2A2396C6008E3FE2 /* AppDelegate.m in Sources */,
+				21B41D0F2A2396C6008E3FE2 /* JBRAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
