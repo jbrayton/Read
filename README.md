@@ -1,0 +1,1 @@
+I created the icon based on [this reader icon](https://thenounproject.com/icon/reader-2654728/). I purchased a royalty-free license from The Noun Project.
