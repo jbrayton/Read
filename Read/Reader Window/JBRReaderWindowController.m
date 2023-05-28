@@ -7,8 +7,11 @@
 
 #import "JBRReaderWindowController.h"
 #import "JBRURLBarViewController.h"
+#import "JBRReaderViewController.h"
 
 @interface JBRReaderWindowController ()<NSToolbarDelegate>
+
+@property (nonatomic, strong, nonnull) JBRURLBarViewController* urlBarViewController;
 
 @end
 
@@ -20,9 +23,15 @@
 
 - (void) showWindow:(id)sender {
     [self configureToolbar];
-    [self.window addTitlebarAccessoryViewController:[[JBRURLBarViewController alloc] init]];
+    self.urlBarViewController = [[JBRURLBarViewController alloc] init];
+    self.urlBarViewController.delegate = (JBRReaderViewController*) self.contentViewController;
+    [self.window addTitlebarAccessoryViewController:self.urlBarViewController];
     [super showWindow:sender];
-    
+    [self.urlBarViewController makeUrlBarFirstResponder];
+}
+
+- (IBAction) openLocation:(id) sender {
+    [self.urlBarViewController makeUrlBarFirstResponder];
 }
 
 #pragma mark - Toolbar

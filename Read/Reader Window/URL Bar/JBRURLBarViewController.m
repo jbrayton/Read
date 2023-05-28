@@ -24,12 +24,13 @@
     return self;
 }
 
-
 - (void)loadView {
     self.view = [[NSView alloc] init];
     self.urlTextField = [[JBRURLBarTextField alloc] init];
     self.urlTextField.translatesAutoresizingMaskIntoConstraints = NO;
     self.urlTextField.cell.wraps = NO;
+    self.urlTextField.target = self;
+    self.urlTextField.action = @selector(handleUrlStringChanged:);
     [self.view addSubview:self.urlTextField];
     
     // I want the URL field to be centered, but the space it is working with not centered. It is the
@@ -43,6 +44,24 @@
         [self.urlTextField.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor],
         [self.urlTextField.heightAnchor constraintEqualToConstant:28.0],
     ]];
+}
+
+- (void) makeUrlBarFirstResponder {
+    [self.urlTextField becomeFirstResponder];
+}
+
+#pragma mark - NSTextFieldDelegate
+
+- (void) handleUrlStringChanged:(NSTextField*) urlStringField {
+    NSString* urlString = [urlStringField stringValue];
+
+    // If the URL is something like "apple.com", prepend "https://".
+    if ([urlString rangeOfString:@":/"].location == NSNotFound) {
+        urlString = [NSString stringWithFormat:@"https://%@", urlString];
+        [self.urlTextField setStringValue:urlString];
+    }
+    
+    [self.delegate urlBarViewController:self urlStringChangedTo:urlString];
 }
 
 @end

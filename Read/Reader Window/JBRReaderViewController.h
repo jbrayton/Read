@@ -6,10 +6,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "JBRURLBarViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JBRReaderViewController : NSViewController
+@interface JBRReaderViewController : NSViewController<JBRURLBarViewControllerDelegate>
 
 @end
 
