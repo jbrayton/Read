@@ -9,13 +9,14 @@
         <scene sceneID="cyf-kN-tqi">
             <objects>
                 <windowController storyboardIdentifier="JBRReaderWindowController" id="MxZ-6L-QWw" customClass="JBRReaderWindowController" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" id="C7b-wt-mrQ">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" tabbingMode="disallowed" titleVisibility="hidden" id="C7b-wt-mrQ">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="216" y="264" width="480" height="270"/>
+                        <rect key="contentRect" x="216" y="264" width="800" height="500"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1536" height="935"/>
+                        <value key="minSize" type="size" width="800" height="500"/>
                         <view key="contentView" id="jA8-In-T8v">
-                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <rect key="frame" x="0.0" y="0.0" width="800" height="500"/>
                             <autoresizingMask key="autoresizingMask"/>
                         </view>
                         <connections>

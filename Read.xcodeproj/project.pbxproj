@@ -17,6 +17,9 @@
 		21B41D3E2A23A729008E3FE2 /* JBRReaderWindow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B41D3D2A23A729008E3FE2 /* JBRReaderWindow.storyboard */; };
 		21B41D412A23AB51008E3FE2 /* JBRReaderWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D402A23AB51008E3FE2 /* JBRReaderWindowController.m */; };
 		21B41D442A23ABA7008E3FE2 /* JBRReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D432A23ABA7008E3FE2 /* JBRReaderViewController.m */; };
+		21B41D482A23B935008E3FE2 /* JBRURLBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D462A23B935008E3FE2 /* JBRURLBarViewController.m */; };
+		21B41D4C2A23CE52008E3FE2 /* JBRURLBarTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D4B2A23CE52008E3FE2 /* JBRURLBarTextField.m */; };
+		21B41D4F2A23D140008E3FE2 /* JBRURLBarTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D4E2A23D140008E3FE2 /* JBRURLBarTextFieldCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,12 @@
 		21B41D402A23AB51008E3FE2 /* JBRReaderWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRReaderWindowController.m; sourceTree = "<group>"; };
 		21B41D422A23ABA7008E3FE2 /* JBRReaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRReaderViewController.h; sourceTree = "<group>"; };
 		21B41D432A23ABA7008E3FE2 /* JBRReaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRReaderViewController.m; sourceTree = "<group>"; };
+		21B41D452A23B935008E3FE2 /* JBRURLBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRURLBarViewController.h; sourceTree = "<group>"; };
+		21B41D462A23B935008E3FE2 /* JBRURLBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRURLBarViewController.m; sourceTree = "<group>"; };
+		21B41D4A2A23CE52008E3FE2 /* JBRURLBarTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRURLBarTextField.h; sourceTree = "<group>"; };
+		21B41D4B2A23CE52008E3FE2 /* JBRURLBarTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRURLBarTextField.m; sourceTree = "<group>"; };
+		21B41D4D2A23D140008E3FE2 /* JBRURLBarTextFieldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRURLBarTextFieldCell.h; sourceTree = "<group>"; };
+		21B41D4E2A23D140008E3FE2 /* JBRURLBarTextFieldCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRURLBarTextFieldCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,9 +148,23 @@
 				21B41D432A23ABA7008E3FE2 /* JBRReaderViewController.m */,
 				21B41D3F2A23AB51008E3FE2 /* JBRReaderWindowController.h */,
 				21B41D402A23AB51008E3FE2 /* JBRReaderWindowController.m */,
+				21B41D502A23E2D1008E3FE2 /* URL Bar */,
 				21B41D3D2A23A729008E3FE2 /* JBRReaderWindow.storyboard */,
 			);
 			path = "Reader Window";
+			sourceTree = "<group>";
+		};
+		21B41D502A23E2D1008E3FE2 /* URL Bar */ = {
+			isa = PBXGroup;
+			children = (
+				21B41D452A23B935008E3FE2 /* JBRURLBarViewController.h */,
+				21B41D462A23B935008E3FE2 /* JBRURLBarViewController.m */,
+				21B41D4A2A23CE52008E3FE2 /* JBRURLBarTextField.h */,
+				21B41D4B2A23CE52008E3FE2 /* JBRURLBarTextField.m */,
+				21B41D4D2A23D140008E3FE2 /* JBRURLBarTextFieldCell.h */,
+				21B41D4E2A23D140008E3FE2 /* JBRURLBarTextFieldCell.m */,
+			);
+			path = "URL Bar";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +300,9 @@
 				21B41D442A23ABA7008E3FE2 /* JBRReaderViewController.m in Sources */,
 				21B41D412A23AB51008E3FE2 /* JBRReaderWindowController.m in Sources */,
 				21B41D192A2396CB008E3FE2 /* main.m in Sources */,
+				21B41D4C2A23CE52008E3FE2 /* JBRURLBarTextField.m in Sources */,
+				21B41D482A23B935008E3FE2 /* JBRURLBarViewController.m in Sources */,
+				21B41D4F2A23D140008E3FE2 /* JBRURLBarTextFieldCell.m in Sources */,
 				21B41D0F2A2396C6008E3FE2 /* JBRAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

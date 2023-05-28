@@ -6,6 +6,7 @@
 //
 
 #import "JBRReaderWindowController.h"
+#import "JBRURLBarViewController.h"
 
 @interface JBRReaderWindowController ()<NSToolbarDelegate>
 
@@ -19,6 +20,7 @@
 
 - (void) showWindow:(id)sender {
     [self configureToolbar];
+    [self.window addTitlebarAccessoryViewController:[[JBRURLBarViewController alloc] init]];
     [super showWindow:sender];
     
 }
@@ -47,7 +49,7 @@
 }
 
 - (NSArray<NSToolbarItemIdentifier> *) toolbarItemIdentifiers {
-    return @[@"share"];
+    return @[NSToolbarFlexibleSpaceItemIdentifier, @"share"];
 }
 
 
