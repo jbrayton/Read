@@ -19,7 +19,11 @@
     [result appendString:@"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">"];
     
 #warning Add a Content-Security-Policy
-    
+    NSArray* cssFilenameStubs = @[@"static",@"mac",@"insets",@"fontsizes",@"lightmodecolors"];
+    for( NSString* cssFilenameStub in cssFilenameStubs ) {
+        [result appendFormat:@"<link rel=\"stylesheet\" type=\"text/css\" href=\"bundle:///%@.css\">", [self encodedString:cssFilenameStub]];
+    }
+    [result appendString:@"<link rel=\"stylesheet\" type=\"text/css\" href=\"bundle:///darkmodecolors.css\" media=\"(prefers-color-scheme: dark)\">"];
     [result appendString:@"</head>"];
     [result appendFormat:@"<body>"];
     

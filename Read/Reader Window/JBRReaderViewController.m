@@ -10,6 +10,7 @@
 #import "JBRWebpageContentResponse.h"
 #import "JBRWebpageTextService.h"
 #import "JBRHTMLGenerator.h"
+#import "JBRBundleSchemeHandler.h"
 @import WebKit;
 
 @interface JBRReaderViewController ()<WKNavigationDelegate>
@@ -39,7 +40,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.webView = [[WKWebView alloc] init];
+    
+    WKWebViewConfiguration* configuration = [[WKWebViewConfiguration alloc] init];
+    [configuration setURLSchemeHandler:[[JBRBundleSchemeHandler alloc] init] forURLScheme:@"bundle"];
+    
+    self.webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:configuration];
     self.webView.translatesAutoresizingMaskIntoConstraints = NO;
     self.webView.navigationDelegate = self;
     [self.view addSubview:self.webView];

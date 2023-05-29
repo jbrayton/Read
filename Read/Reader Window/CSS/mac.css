@@ -1,0 +1,11 @@
+/*
+    The two elements below prevent the scroll view on macOS from having horizontal
+    elasticity when scrolling. On iOS, a previous version of this seemed to mess up determining the location on screen
+    (within the scrolled area) at which an image is located. Might be ok with this version, I don't know. But for now it's
+    macOS-only.
+ */
+html, body {
+    overflow-x: clip;
+    overscroll-behavior-x: none;
+}
+

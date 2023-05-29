@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		211010852A253D10004B7025 /* static.css in Resources */ = {isa = PBXBuildFile; fileRef = 211010842A253D10004B7025 /* static.css */; };
+		211010872A254750004B7025 /* mac.css in Resources */ = {isa = PBXBuildFile; fileRef = 211010862A254750004B7025 /* mac.css */; };
+		211010892A254784004B7025 /* insets.css in Resources */ = {isa = PBXBuildFile; fileRef = 211010882A254784004B7025 /* insets.css */; };
+		2110108B2A2547A3004B7025 /* fontsizes.css in Resources */ = {isa = PBXBuildFile; fileRef = 2110108A2A2547A3004B7025 /* fontsizes.css */; };
+		2110108E2A25492D004B7025 /* JBRBundleSchemeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2110108D2A25492D004B7025 /* JBRBundleSchemeHandler.m */; };
+		211010912A255062004B7025 /* lightmodecolors.css in Resources */ = {isa = PBXBuildFile; fileRef = 2110108F2A255061004B7025 /* lightmodecolors.css */; };
+		211010922A255062004B7025 /* darkmodecolors.css in Resources */ = {isa = PBXBuildFile; fileRef = 211010902A255061004B7025 /* darkmodecolors.css */; };
 		214BDB1A2A245A6200D7F8C9 /* JBRAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BDB192A245A6200D7F8C9 /* JBRAccessToken.m */; };
 		214BDB1C2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BDB1B2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m */; };
 		214BDB202A250A9100D7F8C9 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BDB1E2A250A9100D7F8C9 /* GTMNSString+HTML.m */; };
@@ -49,6 +56,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		211010842A253D10004B7025 /* static.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = static.css; sourceTree = "<group>"; };
+		211010862A254750004B7025 /* mac.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = mac.css; sourceTree = "<group>"; };
+		211010882A254784004B7025 /* insets.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = insets.css; sourceTree = "<group>"; };
+		2110108A2A2547A3004B7025 /* fontsizes.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = fontsizes.css; sourceTree = "<group>"; };
+		2110108C2A25492D004B7025 /* JBRBundleSchemeHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRBundleSchemeHandler.h; sourceTree = "<group>"; };
+		2110108D2A25492D004B7025 /* JBRBundleSchemeHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRBundleSchemeHandler.m; sourceTree = "<group>"; };
+		2110108F2A255061004B7025 /* lightmodecolors.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = lightmodecolors.css; sourceTree = "<group>"; };
+		211010902A255061004B7025 /* darkmodecolors.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = darkmodecolors.css; sourceTree = "<group>"; };
 		214BDB182A245A6200D7F8C9 /* JBRAccessToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRAccessToken.h; sourceTree = "<group>"; };
 		214BDB192A245A6200D7F8C9 /* JBRAccessToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAccessToken.m; sourceTree = "<group>"; };
 		214BDB1B2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAccessTokenUnitTests.m; sourceTree = "<group>"; };
@@ -116,6 +131,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		211010832A253CFE004B7025 /* CSS */ = {
+			isa = PBXGroup;
+			children = (
+				211010902A255061004B7025 /* darkmodecolors.css */,
+				2110108A2A2547A3004B7025 /* fontsizes.css */,
+				211010882A254784004B7025 /* insets.css */,
+				2110108F2A255061004B7025 /* lightmodecolors.css */,
+				211010862A254750004B7025 /* mac.css */,
+				211010842A253D10004B7025 /* static.css */,
+			);
+			path = CSS;
+			sourceTree = "<group>";
+		};
 		214BDB1D2A250A7200D7F8C9 /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,8 +210,11 @@
 		21B41D3C2A23A6C7008E3FE2 /* Reader Window */ = {
 			isa = PBXGroup;
 			children = (
+				211010832A253CFE004B7025 /* CSS */,
 				214BDB222A250B8000D7F8C9 /* JBRHTMLGenerator.h */,
 				214BDB232A250B8000D7F8C9 /* JBRHTMLGenerator.m */,
+				2110108C2A25492D004B7025 /* JBRBundleSchemeHandler.h */,
+				2110108D2A25492D004B7025 /* JBRBundleSchemeHandler.m */,
 				21B41D422A23ABA7008E3FE2 /* JBRReaderViewController.h */,
 				21B41D432A23ABA7008E3FE2 /* JBRReaderViewController.m */,
 				21B41D3F2A23AB51008E3FE2 /* JBRReaderWindowController.h */,
@@ -354,6 +385,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				21B41D142A2396CB008E3FE2 /* Assets.xcassets in Resources */,
+				211010922A255062004B7025 /* darkmodecolors.css in Resources */,
+				211010912A255062004B7025 /* lightmodecolors.css in Resources */,
+				2110108B2A2547A3004B7025 /* fontsizes.css in Resources */,
+				211010892A254784004B7025 /* insets.css in Resources */,
+				211010852A253D10004B7025 /* static.css in Resources */,
+				211010872A254750004B7025 /* mac.css in Resources */,
 				21B41D172A2396CB008E3FE2 /* Main.storyboard in Resources */,
 				21B41D3E2A23A729008E3FE2 /* JBRReaderWindow.storyboard in Resources */,
 			);
@@ -386,6 +423,7 @@
 				21B41D412A23AB51008E3FE2 /* JBRReaderWindowController.m in Sources */,
 				214BDB1A2A245A6200D7F8C9 /* JBRAccessToken.m in Sources */,
 				21B41D192A2396CB008E3FE2 /* main.m in Sources */,
+				2110108E2A25492D004B7025 /* JBRBundleSchemeHandler.m in Sources */,
 				21B41D4C2A23CE52008E3FE2 /* JBRURLBarTextField.m in Sources */,
 				21B41D5D2A2443B5008E3FE2 /* JBRURLSessionDelegate.m in Sources */,
 				21B41D702A244CA9008E3FE2 /* JBRWebpageContentResponse.m in Sources */,

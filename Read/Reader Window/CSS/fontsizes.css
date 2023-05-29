@@ -1,0 +1,14 @@
+
+body, .titlediv h3 {
+    font-size: 18px;
+}
+
+.bodydiv h3.unread_webpagetextunavailable {
+    font-size: 18px !important;
+}
+
+.titlediv, .bodydiv, hr.unread_feedandpagetextseparator {
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}

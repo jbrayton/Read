@@ -1,0 +1,207 @@
+body, html {
+    background: #1E1E1EFF;
+    color: #F3F3F3FF;
+    -webkit-tap-highlight-color: rbga(0, 0, 0, 242.25);
+}
+
+code {
+    border: 1px solid #3F3F3FFF;
+    background-color: #2B2B2BFF;
+}
+
+pre {
+    border: 1px solid #3F3F3FFF;
+    background-color: #2B2B2BFF;
+}
+
+a, a:active, a:visited, em a, em a:active, em a:visited {
+    color: #FF3A30FF;
+    border-bottom: 1px dotted #FF3A30FF;
+}
+
+a.unreadhighlight[href^="http"] {
+    background: #FFFFFF1C;
+    border-radius: 3.5px;
+}
+
+hr {
+    color: #3F3F3FFF;
+    background: #3F3F3FFF;
+}
+
+small {
+    color: #BFBFBFFF;
+}
+
+blockquote {
+    border-left: 1px solid #3F3F3FFF;
+    color: #BFBFBFFF;
+}
+
+.titlediv h1 {
+    color: #F3F3F3FF !important;
+}
+
+.titlediv h2 {
+    color: #FF3A30FF;
+}
+
+.titlediv h3 {
+    color: #6B6B6BFF;
+}
+
+.titlediv h1 a {
+    color: #F3F3F3FF !important;
+}
+
+.titlediv h2 a {
+    color: #FF3A30FF !important;
+}
+
+.titlediv h3 a {
+    color: #6B6B6BFF !important;
+}
+
+.titlediv h3.unread_webpagetextunavailable, .bodydiv h3.unread_webpagetextunavailable,
+.titlediv h3.unread_webpagetextunavailable a, .bodydiv h3.unread_webpagetextunavailable a,
+.titlediv h3.unread_webpagetextunavailable a:visited, .bodydiv h3.unread_webpagetextunavailable a:visited,
+.titlediv h3.unread_webpagetextunavailable a:active, .bodydiv h3.unread_webpagetextunavailable a:active {
+    color: #FF3A30FF !important;
+    margin-top: 1.85em;
+}
+
+.titlediv h3.unread_webpagetextunavailable a:hover, .bodydiv h3.unread_webpagetextunavailable a:hover {
+    color: #B7312AFF !important;
+    margin-top: 1.85em;
+}
+
+.bodydiv h1, .bodydiv h2, .bodydiv h3 {
+    color: #F3F3F3FF;
+}
+
+.bodydiv h4 {
+    color: #F3F3F3FF;
+}
+
+.bodydiv h5, .bodydiv h6,
+.bodydiv h7 {
+    color: #6B6B6BFF;
+}
+
+.bodydiv h1 em, .bodydiv h2 em, .bodydiv h3 em,
+.bodydiv h1 i, .bodydiv h2 i, .bodydiv h3 i,
+.bodydiv h1 strong em, .bodydiv h2 strong em, .bodydiv h3 strong em,
+.bodydiv h1 em strong, .bodydiv h2 em strong, .bodydiv h3 em strong,
+.bodydiv h1 strong i, .bodydiv h2 strong i, .bodydiv h3 strong i,
+.bodydiv h1 i strong, .bodydiv h2 i strong, .bodydiv h3 i strong,
+.bodydiv h1 b em, .bodydiv h2 b em, .bodydiv h3 b em,
+.bodydiv h1 em b, .bodydiv h2 em b, .bodydiv h3 em b,
+.bodydiv h1 b i, .bodydiv h2 b i, .bodydiv h3 b i,
+.bodydiv h1 i b, .bodydiv h2 i b, .bodydiv h3 i b,
+.bodydiv h1 strong, .bodydiv h2 strong, .bodydiv h3 strong,
+.bodydiv h1 b, .bodydiv h2 b, .bodydiv h3 b {
+    color: #6B6B6BFF;
+}
+
+.bodydiv img,
+.bodydiv canvas{
+    opacity: 0.75;
+}
+
+.bodydiv audio {
+    opacity: 0.75;
+}
+
+.bodydiv figcaption {
+    color: #6B6B6BFF;
+}
+
+.bodydiv .unread-iframe-replacement-class {
+    background: #2B2B2BFF;
+}
+
+.footnote__button {
+    background-color: #6B6B6BFF;
+}
+
+.footnote {
+    color: #1E1E1EFF;
+    background: #6B6B6BFF;
+}
+
+.footnote__wrapper {
+    background-color: #F3F3F3FF;
+}
+
+.footnote__content {
+    background: #F3F3F3FF;
+}
+
+.footnote__tooltip {
+    background: #F3F3F3FF;
+    border: 1px solid #F3F3F3FF;
+}
+
+.footnote__content a {
+    color: #1E1E1EFF !important;
+    border-bottom: 1px dotted #1E1E1EFF;
+}
+
+.footnote__content code {
+    color: #1E1E1EFF !important;
+    background: #F3F3F3FF;
+}
+
+aside {
+    border: 1px solid #3F3F3FFF;
+}
+
+@media (min-device-width: 667px) {
+
+    a:hover, em a:hover {
+        color: #B7312AFF;
+        border-bottom: 1px dotted #B7312AFF;
+    }
+
+
+    .titlediv h1 a:hover {
+        color: #AFAFAFFF !important;
+    }
+
+    .titlediv h2 a:hover {
+        color: #B7312AFF !important;
+    }
+
+    .titlediv h3 a:hover {
+        color: #525252FF !important;
+    }
+
+    .footnote__content a:hover {
+        color: #626262FF !important;
+        border-bottom: 1px dotted #626262FF;
+    }
+
+
+}
+
+.bodydiv .unread-appicon-grid a img {
+    border-color: #6B6B6B26;
+}
+
+.bodydiv .unread-appicon-grid figcaption {
+    color: #F3F3F3FF;
+}
+
+table.unread_border th, table.unread_border td {
+    border: 1px solid #F3F3F3FF;
+}
+
+div.unread-appicon-grid path.iconborder {
+    stroke: #FFFFFF1C;
+}
+
+
+body ::selection, html ::selection {
+    background-color: #FFFFFF1C !important;
+}
+

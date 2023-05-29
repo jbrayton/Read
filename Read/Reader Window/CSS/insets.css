@@ -1,0 +1,14 @@
+.titlediv {
+    margin-top: 0px;
+}
+
+.bodydiv {
+    margin-bottom: 0px;
+}
+
+/* On a phone (not an iPad) in landscape mode, no top margin because there is no header. */
+@media (orientation: landscape) and (max-height: 700px) {
+    .titlediv {
+        margin-top: 0px;
+    }
+}
