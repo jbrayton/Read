@@ -25,6 +25,7 @@
     [self configureToolbar];
     self.urlBarViewController = [[JBRURLBarViewController alloc] init];
     self.urlBarViewController.delegate = (JBRReaderViewController*) self.contentViewController;
+    ((JBRReaderViewController*) self.contentViewController).loadingDelegate = self.urlBarViewController;
     [self.window addTitlebarAccessoryViewController:self.urlBarViewController];
     [super showWindow:sender];
     [self.urlBarViewController makeUrlBarFirstResponder];

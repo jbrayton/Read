@@ -7,10 +7,15 @@
 
 #import "JBRURLBarViewController.h"
 #import "JBRURLBarTextField.h"
+#import "JBRReaderViewController.h"
 
 @interface JBRURLBarViewController ()
 
 @property (nonatomic, strong, nullable) NSTextField* urlTextField;
+@property (nonatomic, strong, nullable) NSProgressIndicator* progressIndicator;
+
+// This keeps track of whether the progress indicator should be animating.
+@property (nonatomic, assign) BOOL currentlyLoading;
 
 @end
 
@@ -44,10 +49,34 @@
         [self.urlTextField.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor],
         [self.urlTextField.heightAnchor constraintEqualToConstant:28.0],
     ]];
+    
+    self.progressIndicator = [[NSProgressIndicator alloc] init];
+    self.progressIndicator.translatesAutoresizingMaskIntoConstraints = NO;
+    self.progressIndicator.style = NSProgressIndicatorStyleSpinning;
+    self.progressIndicator.controlSize = NSControlSizeSmall;
+    self.progressIndicator.displayedWhenStopped = NO;
+    [self.view addSubview:self.progressIndicator];
+    [self.view addConstraints:@[
+        [self.progressIndicator.leadingAnchor constraintEqualToAnchor:self.urlTextField.trailingAnchor constant:20.0],
+        [self.progressIndicator.centerYAnchor constraintEqualToAnchor:self.view.centerYAnchor]
+    ]];
 }
 
 - (void) makeUrlBarFirstResponder {
     [self.urlTextField becomeFirstResponder];
+}
+
+#pragma mark - JBRReaderViewControllerLoadingDelegate
+
+- (void) readerViewController:(JBRReaderViewController*) readerViewController setLoadingPage:(BOOL) loadingPage {
+    if (loadingPage != _currentlyLoading) {
+        _currentlyLoading = loadingPage;
+        if (loadingPage) {
+            [self.progressIndicator startAnimation:nil];
+        } else {
+            [self.progressIndicator stopAnimation:nil];
+        }
+    }
 }
 
 #pragma mark - NSTextFieldDelegate

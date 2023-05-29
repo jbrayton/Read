@@ -60,8 +60,17 @@
     __weak JBRReaderViewController* weakSelf = self;
     self.currentRequestCounter += 1;
     NSInteger initialCurrentRequestCounter = self.currentRequestCounter;
+    [self.loadingDelegate readerViewController:self setLoadingPage:YES];
     [[JBRWebpageTextService shared] getWebpageContentForUrlString:urlString completionHandler:^(JBRWebpageContentResponse * _Nullable webpageContentResponse) {
         if (initialCurrentRequestCounter == weakSelf.currentRequestCounter) {
+            
+            // Let the loadingDelegate know that we are done. Put "self" into "strongSelf" so that we do not
+            // create a memory leak, and to ensure that we do not end up passing a readerViewController value of "nil".
+            __weak JBRReaderViewController* strongSelf = self;
+            if (strongSelf) {
+                [strongSelf.loadingDelegate readerViewController:strongSelf setLoadingPage:NO];
+            }
+            
             weakSelf.currentUrlString = urlString;
             if (weakSelf.webpageTextUnavailableLabel) {
                 [weakSelf.webpageTextUnavailableLabel removeFromSuperview];
