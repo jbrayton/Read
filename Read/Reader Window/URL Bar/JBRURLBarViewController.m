@@ -10,13 +10,13 @@
 
 @interface JBRURLBarViewController ()
 
-@property (strong, nonatomic, nullable) NSTextField* urlTextField;
+@property (nonatomic, strong, nullable) NSTextField* urlTextField;
 
 @end
 
 @implementation JBRURLBarViewController
 
--(id) init {
+-(instancetype) init {
     self = [super init];
     if (self != nil) {
         self.layoutAttribute = NSLayoutAttributeTop;
@@ -33,11 +33,11 @@
     self.urlTextField.action = @selector(handleUrlStringChanged:);
     [self.view addSubview:self.urlTextField];
     
-    // I want the URL field to be centered, but the space it is working with not centered. It is the
+    // I want the URL field to be centered, but the space it is working in is not centered. It is the
     // space between the close/minimize/full screen buttons and the toolbar item. The constants may need to be
     // adjusted with a future version of macOS.
-    CGFloat margin = 60.0;
-    CGFloat addToRightMargin = 66.0;
+    const CGFloat margin = 60.0;
+    const CGFloat addToRightMargin = 66.0;
     [self.view addConstraints:@[
         [self.urlTextField.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor constant:margin],
         [self.urlTextField.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor constant:0-margin-addToRightMargin],
@@ -56,6 +56,9 @@
     NSString* urlString = [urlStringField stringValue];
 
     // If the URL is something like "apple.com", prepend "https://".
+    // This does not handle URLs with some unicode characters that `NSURL` tends to reject.
+    // If I was going to handle those I would incorporate WebURL (https://github.com/karwa/swift-url)
+    // to perform necessary encoding.
     if ([urlString rangeOfString:@":/"].location == NSNotFound) {
         urlString = [NSString stringWithFormat:@"https://%@", urlString];
         [self.urlTextField setStringValue:urlString];

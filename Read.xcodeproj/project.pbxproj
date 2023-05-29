@@ -7,17 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		214BDB1A2A245A6200D7F8C9 /* JBRAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BDB192A245A6200D7F8C9 /* JBRAccessToken.m */; };
+		214BDB1C2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BDB1B2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m */; };
 		21B41D0F2A2396C6008E3FE2 /* JBRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D0E2A2396C6008E3FE2 /* JBRAppDelegate.m */; };
 		21B41D142A2396CB008E3FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B41D132A2396CB008E3FE2 /* Assets.xcassets */; };
 		21B41D172A2396CB008E3FE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B41D152A2396CB008E3FE2 /* Main.storyboard */; };
 		21B41D192A2396CB008E3FE2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D182A2396CB008E3FE2 /* main.m */; };
-		21B41D242A2396CB008E3FE2 /* ReadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D232A2396CB008E3FE2 /* ReadTests.m */; };
 		21B41D3E2A23A729008E3FE2 /* JBRReaderWindow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B41D3D2A23A729008E3FE2 /* JBRReaderWindow.storyboard */; };
 		21B41D412A23AB51008E3FE2 /* JBRReaderWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D402A23AB51008E3FE2 /* JBRReaderWindowController.m */; };
 		21B41D442A23ABA7008E3FE2 /* JBRReaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D432A23ABA7008E3FE2 /* JBRReaderViewController.m */; };
 		21B41D482A23B935008E3FE2 /* JBRURLBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D462A23B935008E3FE2 /* JBRURLBarViewController.m */; };
 		21B41D4C2A23CE52008E3FE2 /* JBRURLBarTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D4B2A23CE52008E3FE2 /* JBRURLBarTextField.m */; };
 		21B41D4F2A23D140008E3FE2 /* JBRURLBarTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D4E2A23D140008E3FE2 /* JBRURLBarTextFieldCell.m */; };
+		21B41D542A23F09F008E3FE2 /* JBRWebpageTextService.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D532A23F09F008E3FE2 /* JBRWebpageTextService.m */; };
+		21B41D572A23F10F008E3FE2 /* JBRAccessTokenResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D562A23F10F008E3FE2 /* JBRAccessTokenResponse.m */; };
+		21B41D5A2A23F295008E3FE2 /* JBRAccessTokenResponseUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D592A23F295008E3FE2 /* JBRAccessTokenResponseUnitTests.m */; };
+		21B41D5D2A2443B5008E3FE2 /* JBRURLSessionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D5C2A2443B5008E3FE2 /* JBRURLSessionDelegate.m */; };
+		21B41D6D2A244665008E3FE2 /* JBRWebpageTextServiceIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D6C2A244665008E3FE2 /* JBRWebpageTextServiceIntegrationTests.m */; };
+		21B41D702A244CA9008E3FE2 /* JBRWebpageContentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D6F2A244CA9008E3FE2 /* JBRWebpageContentResponse.m */; };
+		21B41D722A244E04008E3FE2 /* JBRWebpageContentResponseUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D712A244E04008E3FE2 /* JBRWebpageContentResponseUnitTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,9 +36,19 @@
 			remoteGlobalIDString = 21B41D092A2396C6008E3FE2;
 			remoteInfo = Read;
 		};
+		21B41D662A244614008E3FE2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 21B41D022A2396C6008E3FE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 21B41D092A2396C6008E3FE2;
+			remoteInfo = Read;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		214BDB182A245A6200D7F8C9 /* JBRAccessToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRAccessToken.h; sourceTree = "<group>"; };
+		214BDB192A245A6200D7F8C9 /* JBRAccessToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAccessToken.m; sourceTree = "<group>"; };
+		214BDB1B2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAccessTokenUnitTests.m; sourceTree = "<group>"; };
 		21B41D0A2A2396C6008E3FE2 /* Read.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Read.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B41D0D2A2396C6008E3FE2 /* JBRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRAppDelegate.h; sourceTree = "<group>"; };
 		21B41D0E2A2396C6008E3FE2 /* JBRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAppDelegate.m; sourceTree = "<group>"; };
@@ -38,8 +56,7 @@
 		21B41D162A2396CB008E3FE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		21B41D182A2396CB008E3FE2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		21B41D1A2A2396CB008E3FE2 /* Read.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Read.entitlements; sourceTree = "<group>"; };
-		21B41D1F2A2396CB008E3FE2 /* ReadTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		21B41D232A2396CB008E3FE2 /* ReadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReadTests.m; sourceTree = "<group>"; };
+		21B41D1F2A2396CB008E3FE2 /* Read Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Read Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B41D3D2A23A729008E3FE2 /* JBRReaderWindow.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JBRReaderWindow.storyboard; sourceTree = "<group>"; };
 		21B41D3F2A23AB51008E3FE2 /* JBRReaderWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRReaderWindowController.h; sourceTree = "<group>"; };
 		21B41D402A23AB51008E3FE2 /* JBRReaderWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRReaderWindowController.m; sourceTree = "<group>"; };
@@ -51,6 +68,18 @@
 		21B41D4B2A23CE52008E3FE2 /* JBRURLBarTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRURLBarTextField.m; sourceTree = "<group>"; };
 		21B41D4D2A23D140008E3FE2 /* JBRURLBarTextFieldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRURLBarTextFieldCell.h; sourceTree = "<group>"; };
 		21B41D4E2A23D140008E3FE2 /* JBRURLBarTextFieldCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRURLBarTextFieldCell.m; sourceTree = "<group>"; };
+		21B41D522A23F09F008E3FE2 /* JBRWebpageTextService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRWebpageTextService.h; sourceTree = "<group>"; };
+		21B41D532A23F09F008E3FE2 /* JBRWebpageTextService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRWebpageTextService.m; sourceTree = "<group>"; };
+		21B41D552A23F10F008E3FE2 /* JBRAccessTokenResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRAccessTokenResponse.h; sourceTree = "<group>"; };
+		21B41D562A23F10F008E3FE2 /* JBRAccessTokenResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAccessTokenResponse.m; sourceTree = "<group>"; };
+		21B41D592A23F295008E3FE2 /* JBRAccessTokenResponseUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAccessTokenResponseUnitTests.m; sourceTree = "<group>"; };
+		21B41D5B2A2443B5008E3FE2 /* JBRURLSessionDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRURLSessionDelegate.h; sourceTree = "<group>"; };
+		21B41D5C2A2443B5008E3FE2 /* JBRURLSessionDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRURLSessionDelegate.m; sourceTree = "<group>"; };
+		21B41D622A244614008E3FE2 /* Read Integration Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Read Integration Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		21B41D6C2A244665008E3FE2 /* JBRWebpageTextServiceIntegrationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRWebpageTextServiceIntegrationTests.m; sourceTree = "<group>"; };
+		21B41D6E2A244CA9008E3FE2 /* JBRWebpageContentResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRWebpageContentResponse.h; sourceTree = "<group>"; };
+		21B41D6F2A244CA9008E3FE2 /* JBRWebpageContentResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRWebpageContentResponse.m; sourceTree = "<group>"; };
+		21B41D712A244E04008E3FE2 /* JBRWebpageContentResponseUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRWebpageContentResponseUnitTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +97,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		21B41D5F2A244614008E3FE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -75,7 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				21B41D0C2A2396C6008E3FE2 /* Read */,
-				21B41D222A2396CB008E3FE2 /* ReadTests */,
+				21B41D222A2396CB008E3FE2 /* Read Unit Tests */,
+				21B41D632A244614008E3FE2 /* Read Integration Tests */,
 				21B41D0B2A2396C6008E3FE2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -84,7 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				21B41D0A2A2396C6008E3FE2 /* Read.app */,
-				21B41D1F2A2396CB008E3FE2 /* ReadTests.xctest */,
+				21B41D1F2A2396CB008E3FE2 /* Read Unit Tests.xctest */,
+				21B41D622A244614008E3FE2 /* Read Integration Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,16 +137,17 @@
 				21B41D182A2396CB008E3FE2 /* main.m */,
 				21B41D1A2A2396CB008E3FE2 /* Read.entitlements */,
 				21B41D3C2A23A6C7008E3FE2 /* Reader Window */,
+				21B41D512A23F07B008E3FE2 /* Webpage Text Service */,
 			);
 			path = Read;
 			sourceTree = "<group>";
 		};
-		21B41D222A2396CB008E3FE2 /* ReadTests */ = {
+		21B41D222A2396CB008E3FE2 /* Read Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
-				21B41D232A2396CB008E3FE2 /* ReadTests.m */,
+				21B41D582A23F270008E3FE2 /* Webpage Text Service */,
 			);
-			path = ReadTests;
+			path = "Read Unit Tests";
 			sourceTree = "<group>";
 		};
 		21B41D3C2A23A6C7008E3FE2 /* Reader Window */ = {
@@ -137,6 +176,49 @@
 			path = "URL Bar";
 			sourceTree = "<group>";
 		};
+		21B41D512A23F07B008E3FE2 /* Webpage Text Service */ = {
+			isa = PBXGroup;
+			children = (
+				214BDB182A245A6200D7F8C9 /* JBRAccessToken.h */,
+				214BDB192A245A6200D7F8C9 /* JBRAccessToken.m */,
+				21B41D552A23F10F008E3FE2 /* JBRAccessTokenResponse.h */,
+				21B41D562A23F10F008E3FE2 /* JBRAccessTokenResponse.m */,
+				21B41D6E2A244CA9008E3FE2 /* JBRWebpageContentResponse.h */,
+				21B41D6F2A244CA9008E3FE2 /* JBRWebpageContentResponse.m */,
+				21B41D5B2A2443B5008E3FE2 /* JBRURLSessionDelegate.h */,
+				21B41D5C2A2443B5008E3FE2 /* JBRURLSessionDelegate.m */,
+				21B41D522A23F09F008E3FE2 /* JBRWebpageTextService.h */,
+				21B41D532A23F09F008E3FE2 /* JBRWebpageTextService.m */,
+			);
+			path = "Webpage Text Service";
+			sourceTree = "<group>";
+		};
+		21B41D582A23F270008E3FE2 /* Webpage Text Service */ = {
+			isa = PBXGroup;
+			children = (
+				21B41D592A23F295008E3FE2 /* JBRAccessTokenResponseUnitTests.m */,
+				21B41D712A244E04008E3FE2 /* JBRWebpageContentResponseUnitTests.m */,
+				214BDB1B2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m */,
+			);
+			path = "Webpage Text Service";
+			sourceTree = "<group>";
+		};
+		21B41D632A244614008E3FE2 /* Read Integration Tests */ = {
+			isa = PBXGroup;
+			children = (
+				21B41D6B2A24463C008E3FE2 /* Webpage Text Service */,
+			);
+			path = "Read Integration Tests";
+			sourceTree = "<group>";
+		};
+		21B41D6B2A24463C008E3FE2 /* Webpage Text Service */ = {
+			isa = PBXGroup;
+			children = (
+				21B41D6C2A244665008E3FE2 /* JBRWebpageTextServiceIntegrationTests.m */,
+			);
+			path = "Webpage Text Service";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -157,9 +239,9 @@
 			productReference = 21B41D0A2A2396C6008E3FE2 /* Read.app */;
 			productType = "com.apple.product-type.application";
 		};
-		21B41D1E2A2396CB008E3FE2 /* ReadTests */ = {
+		21B41D1E2A2396CB008E3FE2 /* Read Unit Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21B41D362A2396CB008E3FE2 /* Build configuration list for PBXNativeTarget "ReadTests" */;
+			buildConfigurationList = 21B41D362A2396CB008E3FE2 /* Build configuration list for PBXNativeTarget "Read Unit Tests" */;
 			buildPhases = (
 				21B41D1B2A2396CB008E3FE2 /* Sources */,
 				21B41D1C2A2396CB008E3FE2 /* Frameworks */,
@@ -170,9 +252,27 @@
 			dependencies = (
 				21B41D212A2396CB008E3FE2 /* PBXTargetDependency */,
 			);
-			name = ReadTests;
+			name = "Read Unit Tests";
 			productName = ReadTests;
-			productReference = 21B41D1F2A2396CB008E3FE2 /* ReadTests.xctest */;
+			productReference = 21B41D1F2A2396CB008E3FE2 /* Read Unit Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		21B41D612A244614008E3FE2 /* Read Integration Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 21B41D682A244614008E3FE2 /* Build configuration list for PBXNativeTarget "Read Integration Tests" */;
+			buildPhases = (
+				21B41D5E2A244614008E3FE2 /* Sources */,
+				21B41D5F2A244614008E3FE2 /* Frameworks */,
+				21B41D602A244614008E3FE2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				21B41D672A244614008E3FE2 /* PBXTargetDependency */,
+			);
+			name = "Read Integration Tests";
+			productName = "Read Integration Tests";
+			productReference = 21B41D622A244614008E3FE2 /* Read Integration Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -188,6 +288,10 @@
 						CreatedOnToolsVersion = 14.3.1;
 					};
 					21B41D1E2A2396CB008E3FE2 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 21B41D092A2396C6008E3FE2;
+					};
+					21B41D612A244614008E3FE2 = {
 						CreatedOnToolsVersion = 14.3.1;
 						TestTargetID = 21B41D092A2396C6008E3FE2;
 					};
@@ -207,7 +311,8 @@
 			projectRoot = "";
 			targets = (
 				21B41D092A2396C6008E3FE2 /* Read */,
-				21B41D1E2A2396CB008E3FE2 /* ReadTests */,
+				21B41D1E2A2396CB008E3FE2 /* Read Unit Tests */,
+				21B41D612A244614008E3FE2 /* Read Integration Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -230,6 +335,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		21B41D602A244614008E3FE2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -238,9 +350,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				21B41D442A23ABA7008E3FE2 /* JBRReaderViewController.m in Sources */,
+				21B41D542A23F09F008E3FE2 /* JBRWebpageTextService.m in Sources */,
+				21B41D572A23F10F008E3FE2 /* JBRAccessTokenResponse.m in Sources */,
 				21B41D412A23AB51008E3FE2 /* JBRReaderWindowController.m in Sources */,
+				214BDB1A2A245A6200D7F8C9 /* JBRAccessToken.m in Sources */,
 				21B41D192A2396CB008E3FE2 /* main.m in Sources */,
 				21B41D4C2A23CE52008E3FE2 /* JBRURLBarTextField.m in Sources */,
+				21B41D5D2A2443B5008E3FE2 /* JBRURLSessionDelegate.m in Sources */,
+				21B41D702A244CA9008E3FE2 /* JBRWebpageContentResponse.m in Sources */,
 				21B41D482A23B935008E3FE2 /* JBRURLBarViewController.m in Sources */,
 				21B41D4F2A23D140008E3FE2 /* JBRURLBarTextFieldCell.m in Sources */,
 				21B41D0F2A2396C6008E3FE2 /* JBRAppDelegate.m in Sources */,
@@ -251,7 +368,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21B41D242A2396CB008E3FE2 /* ReadTests.m in Sources */,
+				21B41D5A2A23F295008E3FE2 /* JBRAccessTokenResponseUnitTests.m in Sources */,
+				21B41D722A244E04008E3FE2 /* JBRWebpageContentResponseUnitTests.m in Sources */,
+				214BDB1C2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		21B41D5E2A244614008E3FE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21B41D6D2A244665008E3FE2 /* JBRWebpageTextServiceIntegrationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +389,11 @@
 			isa = PBXTargetDependency;
 			target = 21B41D092A2396C6008E3FE2 /* Read */;
 			targetProxy = 21B41D202A2396CB008E3FE2 /* PBXContainerItemProxy */;
+		};
+		21B41D672A244614008E3FE2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 21B41D092A2396C6008E3FE2 /* Read */;
+			targetProxy = 21B41D662A244614008E3FE2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -472,6 +604,38 @@
 			};
 			name = Release;
 		};
+		21B41D692A244614008E3FE2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 372S63A2R8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.goldenhillsoftware.Read-Integration-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Read.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Read";
+			};
+			name = Debug;
+		};
+		21B41D6A2A244614008E3FE2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 372S63A2R8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.goldenhillsoftware.Read-Integration-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Read.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Read";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -493,11 +657,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		21B41D362A2396CB008E3FE2 /* Build configuration list for PBXNativeTarget "ReadTests" */ = {
+		21B41D362A2396CB008E3FE2 /* Build configuration list for PBXNativeTarget "Read Unit Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				21B41D372A2396CB008E3FE2 /* Debug */,
 				21B41D382A2396CB008E3FE2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		21B41D682A244614008E3FE2 /* Build configuration list for PBXNativeTarget "Read Integration Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21B41D692A244614008E3FE2 /* Debug */,
+				21B41D6A2A244614008E3FE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
