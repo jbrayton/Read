@@ -56,9 +56,6 @@
     NSString* urlString = [urlStringField stringValue];
 
     // If the URL is something like "apple.com", prepend "https://".
-    // This does not handle URLs with some unicode characters that `NSURL` tends to reject.
-    // If I was going to handle those I would incorporate WebURL (https://github.com/karwa/swift-url)
-    // to perform necessary encoding.
     if ([urlString rangeOfString:@":/"].location == NSNotFound) {
         urlString = [NSString stringWithFormat:@"https://%@", urlString];
         [self.urlTextField setStringValue:urlString];

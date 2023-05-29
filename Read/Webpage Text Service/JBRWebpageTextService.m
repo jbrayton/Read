@@ -55,7 +55,7 @@ NSString* const CLIENT_SECRET = @"y!Tu3#P5m!Ec#Ee8Y%4PwYc4mP0E6L*h";
 /*
     This should be called on the main thread. The completion handler will be called on the main thread as well.
  */
-- (void) getWebpageContentForUrlString:(NSString*) urlString completionHandler:(void (^)(JBRWebpageContentResponse*))completionHandler {
+- (void) getWebpageContentForUrlString:(NSString*) urlString completionHandler:(void (^)(JBRWebpageContentResponse* _Nullable))completionHandler {
     if ((_currentAccessToken) && ([_currentAccessToken stillValid])) {
         [self getWebpageContentForUrlString:urlString accessToken:_currentAccessToken.accessToken completionHandler:^(JBRWebpageContentResponse * contentResponse) {
             completionHandler(contentResponse);
@@ -77,7 +77,7 @@ NSString* const CLIENT_SECRET = @"y!Tu3#P5m!Ec#Ee8Y%4PwYc4mP0E6L*h";
 }
 
 // The completionHandler is always called on the main thread. It will be called with `nil` if an error occurs.
-- (void) getAccessTokenWithCompletionHandler:(void (^)(JBRAccessTokenResponse*))completionHandler {
+- (void) getAccessTokenWithCompletionHandler:(void (^)(JBRAccessTokenResponse* _Nullable))completionHandler {
     NSURL* url = [NSURL URLWithString:@"https://auth.goldenhillsoftware.com/1.0/tokens"];
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:url];
     [request setHTTPMethod:@"POST"];
@@ -101,7 +101,7 @@ NSString* const CLIENT_SECRET = @"y!Tu3#P5m!Ec#Ee8Y%4PwYc4mP0E6L*h";
 }
 
 // The completionHandler is always called on the main thread. It will be called with `nil` if an error occurs.
-- (void) getWebpageContentForUrlString:(NSString*) urlString accessToken:(NSString*) accessToken completionHandler:(void (^)(JBRWebpageContentResponse*))completionHandler {
+- (void) getWebpageContentForUrlString:(NSString*) urlString accessToken:(NSString*) accessToken completionHandler:(void (^)(JBRWebpageContentResponse* _Nullable))completionHandler {
     NSURL* url = [NSURL URLWithString:@"https://webpagetextapi.goldenhillsoftware.com/1.0/retrievals"];
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:url];
     [request setHTTPMethod:@"POST"];

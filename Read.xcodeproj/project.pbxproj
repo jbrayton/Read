@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		214BDB1A2A245A6200D7F8C9 /* JBRAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BDB192A245A6200D7F8C9 /* JBRAccessToken.m */; };
 		214BDB1C2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BDB1B2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m */; };
+		214BDB202A250A9100D7F8C9 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BDB1E2A250A9100D7F8C9 /* GTMNSString+HTML.m */; };
+		214BDB242A250B8000D7F8C9 /* JBRHTMLGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BDB232A250B8000D7F8C9 /* JBRHTMLGenerator.m */; };
+		214BDB272A25137D00D7F8C9 /* JBRHTMLGeneratorUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BDB262A25137D00D7F8C9 /* JBRHTMLGeneratorUnitTests.m */; };
 		21B41D0F2A2396C6008E3FE2 /* JBRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 21B41D0E2A2396C6008E3FE2 /* JBRAppDelegate.m */; };
 		21B41D142A2396CB008E3FE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B41D132A2396CB008E3FE2 /* Assets.xcassets */; };
 		21B41D172A2396CB008E3FE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B41D152A2396CB008E3FE2 /* Main.storyboard */; };
@@ -49,6 +52,12 @@
 		214BDB182A245A6200D7F8C9 /* JBRAccessToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRAccessToken.h; sourceTree = "<group>"; };
 		214BDB192A245A6200D7F8C9 /* JBRAccessToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAccessToken.m; sourceTree = "<group>"; };
 		214BDB1B2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAccessTokenUnitTests.m; sourceTree = "<group>"; };
+		214BDB1E2A250A9100D7F8C9 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
+		214BDB1F2A250A9100D7F8C9 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		214BDB212A250A9F00D7F8C9 /* GTMDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		214BDB222A250B8000D7F8C9 /* JBRHTMLGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRHTMLGenerator.h; sourceTree = "<group>"; };
+		214BDB232A250B8000D7F8C9 /* JBRHTMLGenerator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRHTMLGenerator.m; sourceTree = "<group>"; };
+		214BDB262A25137D00D7F8C9 /* JBRHTMLGeneratorUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRHTMLGeneratorUnitTests.m; sourceTree = "<group>"; };
 		21B41D0A2A2396C6008E3FE2 /* Read.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Read.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B41D0D2A2396C6008E3FE2 /* JBRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRAppDelegate.h; sourceTree = "<group>"; };
 		21B41D0E2A2396C6008E3FE2 /* JBRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAppDelegate.m; sourceTree = "<group>"; };
@@ -107,6 +116,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		214BDB1D2A250A7200D7F8C9 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				214BDB212A250A9F00D7F8C9 /* GTMDefines.h */,
+				214BDB1F2A250A9100D7F8C9 /* GTMNSString+HTML.h */,
+				214BDB1E2A250A9100D7F8C9 /* GTMNSString+HTML.m */,
+			);
+			path = "Third Party";
+			sourceTree = "<group>";
+		};
+		214BDB252A25136000D7F8C9 /* Reader Window */ = {
+			isa = PBXGroup;
+			children = (
+				214BDB262A25137D00D7F8C9 /* JBRHTMLGeneratorUnitTests.m */,
+			);
+			path = "Reader Window";
+			sourceTree = "<group>";
+		};
 		21B41D012A2396C6008E3FE2 = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +163,7 @@
 				21B41D152A2396CB008E3FE2 /* Main.storyboard */,
 				21B41D182A2396CB008E3FE2 /* main.m */,
 				21B41D1A2A2396CB008E3FE2 /* Read.entitlements */,
+				214BDB1D2A250A7200D7F8C9 /* Third Party */,
 				21B41D3C2A23A6C7008E3FE2 /* Reader Window */,
 				21B41D512A23F07B008E3FE2 /* Webpage Text Service */,
 			);
@@ -145,6 +173,7 @@
 		21B41D222A2396CB008E3FE2 /* Read Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
+				214BDB252A25136000D7F8C9 /* Reader Window */,
 				21B41D582A23F270008E3FE2 /* Webpage Text Service */,
 			);
 			path = "Read Unit Tests";
@@ -153,6 +182,8 @@
 		21B41D3C2A23A6C7008E3FE2 /* Reader Window */ = {
 			isa = PBXGroup;
 			children = (
+				214BDB222A250B8000D7F8C9 /* JBRHTMLGenerator.h */,
+				214BDB232A250B8000D7F8C9 /* JBRHTMLGenerator.m */,
 				21B41D422A23ABA7008E3FE2 /* JBRReaderViewController.h */,
 				21B41D432A23ABA7008E3FE2 /* JBRReaderViewController.m */,
 				21B41D3F2A23AB51008E3FE2 /* JBRReaderWindowController.h */,
@@ -358,9 +389,11 @@
 				21B41D4C2A23CE52008E3FE2 /* JBRURLBarTextField.m in Sources */,
 				21B41D5D2A2443B5008E3FE2 /* JBRURLSessionDelegate.m in Sources */,
 				21B41D702A244CA9008E3FE2 /* JBRWebpageContentResponse.m in Sources */,
+				214BDB242A250B8000D7F8C9 /* JBRHTMLGenerator.m in Sources */,
 				21B41D482A23B935008E3FE2 /* JBRURLBarViewController.m in Sources */,
 				21B41D4F2A23D140008E3FE2 /* JBRURLBarTextFieldCell.m in Sources */,
 				21B41D0F2A2396C6008E3FE2 /* JBRAppDelegate.m in Sources */,
+				214BDB202A250A9100D7F8C9 /* GTMNSString+HTML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +404,7 @@
 				21B41D5A2A23F295008E3FE2 /* JBRAccessTokenResponseUnitTests.m in Sources */,
 				21B41D722A244E04008E3FE2 /* JBRWebpageContentResponseUnitTests.m in Sources */,
 				214BDB1C2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m in Sources */,
+				214BDB272A25137D00D7F8C9 /* JBRHTMLGeneratorUnitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

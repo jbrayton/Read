@@ -1,1 +1,3 @@
 I created the icon based on [this reader icon](https://thenounproject.com/icon/reader-2654728/). I purchased a royalty-free license from The Noun Project.
+
+This app uses [Google Toolbox for Mac](https://github.com/google/google-toolbox-for-mac) for HTML encoding. Google Toolbox for Mac is licensed under the Apache License (Version 2.0). Ordinarily I might use Swift Package Manager or Carthage to incorporate this. However this app needs a tiny subset of that library’s code. I also wanted to make it very easy for Figure 53 folks to checkout and run the app. So I copied the code I needed from Google Toolbox for Mac directly into this app.
