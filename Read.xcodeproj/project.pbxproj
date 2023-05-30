@@ -64,6 +64,8 @@
 		2110108D2A25492D004B7025 /* JBRBundleSchemeHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRBundleSchemeHandler.m; sourceTree = "<group>"; };
 		2110108F2A255061004B7025 /* lightmodecolors.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = lightmodecolors.css; sourceTree = "<group>"; };
 		211010902A255061004B7025 /* darkmodecolors.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = darkmodecolors.css; sourceTree = "<group>"; };
+		211010932A257BE9004B7025 /* JBRReaderViewControllerLoadingDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRReaderViewControllerLoadingDelegate.h; sourceTree = "<group>"; };
+		211010942A257C7B004B7025 /* JBRURLBarViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRURLBarViewControllerDelegate.h; sourceTree = "<group>"; };
 		214BDB182A245A6200D7F8C9 /* JBRAccessToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRAccessToken.h; sourceTree = "<group>"; };
 		214BDB192A245A6200D7F8C9 /* JBRAccessToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAccessToken.m; sourceTree = "<group>"; };
 		214BDB1B2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAccessTokenUnitTests.m; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				2110108C2A25492D004B7025 /* JBRBundleSchemeHandler.h */,
 				2110108D2A25492D004B7025 /* JBRBundleSchemeHandler.m */,
 				21B41D422A23ABA7008E3FE2 /* JBRReaderViewController.h */,
+				211010932A257BE9004B7025 /* JBRReaderViewControllerLoadingDelegate.h */,
 				21B41D432A23ABA7008E3FE2 /* JBRReaderViewController.m */,
 				21B41D3F2A23AB51008E3FE2 /* JBRReaderWindowController.h */,
 				21B41D402A23AB51008E3FE2 /* JBRReaderWindowController.m */,
@@ -229,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				21B41D452A23B935008E3FE2 /* JBRURLBarViewController.h */,
+				211010942A257C7B004B7025 /* JBRURLBarViewControllerDelegate.h */,
 				21B41D462A23B935008E3FE2 /* JBRURLBarViewController.m */,
 				21B41D4A2A23CE52008E3FE2 /* JBRURLBarTextField.h */,
 				21B41D4B2A23CE52008E3FE2 /* JBRURLBarTextField.m */,

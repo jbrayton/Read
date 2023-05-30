@@ -7,14 +7,12 @@
 
 #import <Cocoa/Cocoa.h>
 #import "JBRReaderViewController.h"
+#import "JBRReaderViewControllerLoadingDelegate.h"
+#import "JBRURLBarViewControllerDelegate.h"
 @class JBRURLBarViewController;
 @protocol JBRReaderViewControllerLoadingDelegate;
 
 NS_ASSUME_NONNULL_BEGIN
-
-@protocol JBRURLBarViewControllerDelegate
-- (void) urlBarViewController:(JBRURLBarViewController*) urlBarViewController urlStringChangedTo:(NSString*) urlString;
-@end
 
 @interface JBRURLBarViewController : NSTitlebarAccessoryViewController<JBRReaderViewControllerLoadingDelegate>
 
