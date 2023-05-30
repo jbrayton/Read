@@ -19,9 +19,17 @@
 
 - (void)windowDidLoad {
     [super windowDidLoad];
+    
+    
 }
 
 - (void) showWindow:(id)sender {
+    CGFloat desiredWidth = 900.0;
+    CGRect screenFrame = [[[NSScreen screens] firstObject] visibleFrame];
+    CGRect windowFrame = CGRectMake(screenFrame.origin.x + (screenFrame.size.width - desiredWidth) / 2.0, screenFrame.origin.y, desiredWidth, screenFrame.size.height);
+
+    [self.window setFrame:windowFrame display:NO];
+
     [self configureToolbar];
     self.urlBarViewController = [[JBRURLBarViewController alloc] init];
     self.urlBarViewController.delegate = (JBRReaderViewController*) self.contentViewController;

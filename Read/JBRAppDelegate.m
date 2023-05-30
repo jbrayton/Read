@@ -29,7 +29,12 @@
 
 - (JBRReaderWindowController*) createReaderWindow {
     JBRReaderWindowController* windowController = [[NSStoryboard storyboardWithName:@"JBRReaderWindow" bundle:nil] instantiateControllerWithIdentifier:@"JBRReaderWindowController"];
-    [windowController showWindow:nil];
+    
+    // This is a `dispatch_async` call because the [NSWindow setFrame:] call just does not seem to work
+    // when done immediately.
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [windowController showWindow:nil];
+    });
     return windowController;
 }
 
