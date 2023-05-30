@@ -66,6 +66,7 @@
     self.currentUrlString = urlString;
     NSInteger initialCurrentRequestCounter = self.currentRequestCounter;
     [self.loadingDelegate readerViewController:self setLoadingPage:YES];
+    [self.view.window setTitle:urlString];
     [[JBRWebpageTextService shared] getWebpageContentForUrlString:urlString completionHandler:^(JBRWebpageContentResponse * _Nullable webpageContentResponse) {
         if (initialCurrentRequestCounter == weakSelf.currentRequestCounter) {
             
@@ -83,6 +84,9 @@
                 weakSelf.tryAgainButton = nil;
             }
             if (webpageContentResponse) {
+                if (webpageContentResponse.title) {
+                    [weakSelf.view.window setTitle:webpageContentResponse.title];
+                }
                 [weakSelf showWebpageContentResponse:webpageContentResponse];
             } else {
                 [weakSelf showFailureToLoad];

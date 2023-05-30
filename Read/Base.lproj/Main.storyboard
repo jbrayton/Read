@@ -60,7 +60,7 @@
                                     <items>
                                         <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
                                             <connections>
-                                                <action selector="newDocument:" target="Ady-hI-5gd" id="4Si-XN-c54"/>
+                                                <action selector="createNewReaderWindow:" target="Ady-hI-5gd" id="EIy-or-TjD"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Open Location…" keyEquivalent="l" id="aZM-2G-mgn">

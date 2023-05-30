@@ -6,20 +6,17 @@
 //
 
 #import "JBRAppDelegate.h"
-#import "JBRReaderWindowController.h"
+#import "JBRReaderWindowManager.h"
+#import <Cocoa/Cocoa.h>
 
 @interface JBRAppDelegate ()
-
-#warning This should be an array of window controllers. It needs to support multiple windows.
-@property (strong, nonatomic, nullable) JBRReaderWindowController* readerWindowController;
 
 @end
 
 @implementation JBRAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-#warning Should only create if we are not instantiating windows via state restoration.
-    self.readerWindowController = [self createReaderWindow];
+    [[JBRReaderWindowManager shared] createReaderWindowIfNone];
 }
 
 - (BOOL)applicationSupportsSecureRestorableState:(NSApplication *)app {
@@ -27,16 +24,15 @@
     return YES;
 }
 
-- (JBRReaderWindowController*) createReaderWindow {
-    JBRReaderWindowController* windowController = [[NSStoryboard storyboardWithName:@"JBRReaderWindow" bundle:nil] instantiateControllerWithIdentifier:@"JBRReaderWindowController"];
-    
-    // This is a `dispatch_async` call because the [NSWindow setFrame:] call just does not seem to work
-    // when done immediately.
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [windowController showWindow:nil];
-    });
-    return windowController;
+- (IBAction) createNewReaderWindow:(id) sender {
+    [[JBRReaderWindowManager shared] createReaderWindow];
 }
 
+// If a Reader Window Controller is first responder, it will put the focus on the
+// text field in the URL bar. If the app delegate is the first responder, it will
+// create a new window.
+- (IBAction) openLocation:(id) sender {
+    [[JBRReaderWindowManager shared] createReaderWindow];
+}
 
 @end
