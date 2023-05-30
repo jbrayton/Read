@@ -146,6 +146,12 @@
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
+    // Allow embedded frames to load. This is necessary for YouTube and other video players.
+    if (!navigationAction.targetFrame.isMainFrame) {
+        decisionHandler(WKNavigationActionPolicyAllow);
+        return;
+    }
+    
     if ((navigationAction.navigationType == WKNavigationTypeOther) && ([navigationAction.request.URL.absoluteString isEqualToString:@"about:blank"])) {
         // The navigation is the result of the app loading HTML. Allow it.
         decisionHandler(WKNavigationActionPolicyAllow);

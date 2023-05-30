@@ -200,8 +200,3 @@ div.unread-appicon-grid path.iconborder {
     stroke: #FFFFFF1C;
 }
 
-
-body ::selection, html ::selection {
-    background-color: #FFFFFF1C !important;
-}
-

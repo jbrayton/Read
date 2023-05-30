@@ -1393,10 +1393,6 @@ aside:not(.footnote) {
     
 }
 
-iframe {
-    visibility: hidden;
-}
-
 /*
  Bitbucket Issue #1037: if a figcaption contains an image, treat it as an inline image.
  */

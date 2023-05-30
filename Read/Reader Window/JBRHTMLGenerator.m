@@ -17,8 +17,13 @@
     [result appendString:@"<head>"];
     [result appendFormat:@"<title>%@</title>", [self encodedString:webpageContentResponse.title]];
     [result appendString:@"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">"];
+    [result appendFormat:@"<base href=\"%@\">", [self encodedString:webpageContentResponse.responseUrlString]];
     
-#warning Add a Content-Security-Policy
+    // HTML content from the webpage text service should already be sanitized, but this is an additional level of
+    // protection that limits what the displayed HTML can do. CSS can only be loaded from "bundle:" URLs. Images and
+    // frames can be from HTTP or HTTPS URLs. No other scripts or remote content can be run.
+    [result appendString:@"<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; style-src bundle:; img-src http: https:; frame-src http: https:;\">"];
+    
     NSArray* cssFilenameStubs = @[@"static",@"mac",@"insets",@"fontsizes",@"lightmodecolors"];
     for( NSString* cssFilenameStub in cssFilenameStubs ) {
         [result appendFormat:@"<link rel=\"stylesheet\" type=\"text/css\" href=\"bundle:///%@.css\">", [self encodedString:cssFilenameStub]];

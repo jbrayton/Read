@@ -199,9 +199,3 @@ table.unread_border th, table.unread_border td {
 div.unread-appicon-grid path.iconborder {
     stroke: #0000001C;
 }
-
-
-body ::selection, html ::selection {
-    background-color: #0000001C !important;
-}
-
