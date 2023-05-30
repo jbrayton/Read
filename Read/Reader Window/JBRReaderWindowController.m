@@ -45,8 +45,8 @@
 }
 
 - (NSToolbarItem*) toolbar:(NSToolbar *)toolbar itemForItemIdentifier:(NSToolbarItemIdentifier)itemIdentifier willBeInsertedIntoToolbar:(BOOL)flag {
-#warning This needs a delegate. It does not share anything yet.
     NSSharingServicePickerToolbarItem* item = [[NSSharingServicePickerToolbarItem alloc] initWithItemIdentifier:itemIdentifier];
+    [item setDelegate:(JBRReaderViewController*) self.contentViewController];
     return item;
 }
 
@@ -61,6 +61,5 @@
 - (NSArray<NSToolbarItemIdentifier> *) toolbarItemIdentifiers {
     return @[NSToolbarFlexibleSpaceItemIdentifier, @"share"];
 }
-
 
 @end

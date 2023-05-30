@@ -63,6 +63,7 @@
 - (void) startLoadingUrlString:(NSString *)urlString {
     __weak JBRReaderViewController* weakSelf = self;
     self.currentRequestCounter += 1;
+    self.currentUrlString = urlString;
     NSInteger initialCurrentRequestCounter = self.currentRequestCounter;
     [self.loadingDelegate readerViewController:self setLoadingPage:YES];
     [[JBRWebpageTextService shared] getWebpageContentForUrlString:urlString completionHandler:^(JBRWebpageContentResponse * _Nullable webpageContentResponse) {
@@ -75,7 +76,6 @@
                 [strongSelf.loadingDelegate readerViewController:strongSelf setLoadingPage:NO];
             }
             
-            weakSelf.currentUrlString = urlString;
             if (weakSelf.webpageTextUnavailableLabel) {
                 [weakSelf.webpageTextUnavailableLabel removeFromSuperview];
                 weakSelf.webpageTextUnavailableLabel = nil;
@@ -157,6 +157,24 @@
     
     // Prevent the webview from performing any other navigation action.
     decisionHandler(WKNavigationActionPolicyCancel);
+}
+
+// MARK: NSSharingServicePickerToolbarItemDelegate
+
+- (nonnull NSArray *)itemsForSharingServicePickerToolbarItem:(nonnull NSSharingServicePickerToolbarItem *)pickerToolbarItem {
+    NSMutableArray* result = [NSMutableArray array];
+    NSString* currentUrlString = self.currentUrlString;
+    if (currentUrlString) {
+        NSURL* url = [NSURL URLWithString:currentUrlString];
+        if (url) {
+            [result addObject:url];
+        } else {
+            // If we cannot parse the URL, share the URL string.
+            [result addObject:currentUrlString];
+        }
+    }
+    
+    return result;
 }
 
 @end

@@ -14,7 +14,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JBRReaderViewController : NSViewController<JBRURLBarViewControllerDelegate>
+@interface JBRReaderViewController : NSViewController<JBRURLBarViewControllerDelegate,NSSharingServicePickerToolbarItemDelegate>
 
 @property (nonatomic, weak, nullable) id<JBRReaderViewControllerLoadingDelegate> loadingDelegate;
 

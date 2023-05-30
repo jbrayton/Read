@@ -221,8 +221,8 @@
 				2110108C2A25492D004B7025 /* JBRBundleSchemeHandler.h */,
 				2110108D2A25492D004B7025 /* JBRBundleSchemeHandler.m */,
 				21B41D422A23ABA7008E3FE2 /* JBRReaderViewController.h */,
-				211010932A257BE9004B7025 /* JBRReaderViewControllerLoadingDelegate.h */,
 				21B41D432A23ABA7008E3FE2 /* JBRReaderViewController.m */,
+				211010932A257BE9004B7025 /* JBRReaderViewControllerLoadingDelegate.h */,
 				211010952A257DA1004B7025 /* JBRReaderWebView.h */,
 				211010962A257DA1004B7025 /* JBRReaderWebView.m */,
 				21B41D3F2A23AB51008E3FE2 /* JBRReaderWindowController.h */,
@@ -237,8 +237,8 @@
 			isa = PBXGroup;
 			children = (
 				21B41D452A23B935008E3FE2 /* JBRURLBarViewController.h */,
-				211010942A257C7B004B7025 /* JBRURLBarViewControllerDelegate.h */,
 				21B41D462A23B935008E3FE2 /* JBRURLBarViewController.m */,
+				211010942A257C7B004B7025 /* JBRURLBarViewControllerDelegate.h */,
 				21B41D4A2A23CE52008E3FE2 /* JBRURLBarTextField.h */,
 				21B41D4B2A23CE52008E3FE2 /* JBRURLBarTextField.m */,
 				21B41D4D2A23D140008E3FE2 /* JBRURLBarTextFieldCell.h */,
