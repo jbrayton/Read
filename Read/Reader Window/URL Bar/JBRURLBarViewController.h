@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface JBRURLBarViewController : NSTitlebarAccessoryViewController<JBRReaderViewControllerLoadingDelegate>
 
+@property (nonatomic, strong, readonly, nullable) NSTextField* urlTextField;
 @property (nonatomic, weak, nullable) id<JBRURLBarViewControllerDelegate> delegate;
 
 - (void) makeUrlBarFirstResponder;

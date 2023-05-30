@@ -20,7 +20,6 @@
 }
 
 - (BOOL)applicationSupportsSecureRestorableState:(NSApplication *)app {
-#warning Currently not performing state restoration.
     return YES;
 }
 

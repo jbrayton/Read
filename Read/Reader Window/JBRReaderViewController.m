@@ -132,6 +132,10 @@
     NSAccessibilityPostNotificationWithUserInfo(self.webView, NSAccessibilityAnnouncementRequestedNotification, userInfo);
 }
 
+- (NSString* _Nullable) urlString {
+    return self.currentUrlString;
+}
+
 // MARK: Handle try again
 
 - (void) handleTryAgainButton:(NSButton*) sender {

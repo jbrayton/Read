@@ -36,25 +36,35 @@
 }
 
 - (void) createReaderWindow {
+    [self internalCreateReaderWindowWithUrlString:nil viaStateRestoration:NO];
+}
+
+- (void) createReaderWindowIfNone {
+    if ([self.windowControllers count] == 0) {
+        [self internalCreateReaderWindowWithUrlString:nil viaStateRestoration:NO];
+    }
+}
+
+- (JBRReaderWindowController*) internalCreateReaderWindowWithUrlString:(NSString*) urlString viaStateRestoration:(BOOL) viaStateRestoration {
     JBRReaderWindowController* windowController = [[NSStoryboard storyboardWithName:@"JBRReaderWindow" bundle:nil] instantiateControllerWithIdentifier:@"JBRReaderWindowController"];
     [self.windowControllers addObject:windowController];
     
     // This is a `dispatch_async` call because the [NSWindow setFrame:] call just does not seem to work
     // when done immediately.
     dispatch_async(dispatch_get_main_queue(), ^{
-        [windowController showWindow:nil];
+        [windowController showWithUrlString:urlString viaStateRestoration:viaStateRestoration];
     });
-}
-
-- (void) createReaderWindowIfNone {
-    if ([self.windowControllers count] == 0) {
-        [self createReaderWindow];
-    }
+    return windowController;
 }
 
 - (void) closingReaderWindowWithWindowController:(JBRReaderWindowController*) windowController {
     [self.windowControllers removeObject:windowController];
 }
 
++ (void) restoreWindowWithIdentifier:(NSUserInterfaceItemIdentifier)identifier state:(NSCoder *)state completionHandler:(void (^)(NSWindow * _Nullable, NSError * _Nullable))completionHandler {
+    NSString* urlString = [state decodeObjectForKey:@"urlString"];
+    JBRReaderWindowController* windowController = [self.shared internalCreateReaderWindowWithUrlString:urlString viaStateRestoration:YES];
+    completionHandler(windowController.window, nil);
+}
 
 @end

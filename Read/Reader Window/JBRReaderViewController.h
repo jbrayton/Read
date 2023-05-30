@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak, nullable) id<JBRReaderViewControllerLoadingDelegate> loadingDelegate;
 
+- (NSString* _Nullable) urlString;
+
 @end
 
 NS_ASSUME_NONNULL_END

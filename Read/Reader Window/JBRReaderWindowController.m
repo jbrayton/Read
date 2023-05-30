@@ -10,7 +10,7 @@
 #import "JBRURLBarViewController.h"
 #import "JBRReaderViewController.h"
 
-@interface JBRReaderWindowController ()<NSToolbarDelegate>
+@interface JBRReaderWindowController ()<NSToolbarDelegate,NSWindowDelegate>
 
 @property (nonatomic, strong, nonnull) JBRURLBarViewController* urlBarViewController;
 @property (nonatomic, readwrite, assign) CGPoint cascadedToPoint;
@@ -22,46 +22,60 @@
 - (void) windowDidLoad {
     [super windowDidLoad];
     [self.window setTitle:NSLocalizedString(@"Untitled", @"")];
+    self.window.restorationClass = [JBRReaderWindowManager class];
 }
 
-- (void) showWindow:(id)sender {
-    /*
-        The first window should be vertically centered, and 900x1200 points -- or as close to that as possible
-        while fitting inside the main screen's visible frame. Subsequent windows should be cascaded.
-     */
-    CGFloat desiredWidth = 900.0;
-    CGFloat desiredHeight = 1200.0;
-    CGRect screenFrame = [[NSScreen mainScreen] visibleFrame];
-    CGRect windowFrame = CGRectMake(screenFrame.origin.x + (screenFrame.size.width - desiredWidth) / 2.0, screenFrame.origin.y + (screenFrame.size.height - desiredHeight) / 2.0, desiredWidth, desiredHeight);
-    if (desiredWidth > screenFrame.size.width) {
-        windowFrame.origin.x = screenFrame.origin.x;
-        windowFrame.size.width = screenFrame.size.width;
-    }
-    if (desiredHeight > screenFrame.size.height) {
-        windowFrame.origin.y = screenFrame.origin.y;
-        windowFrame.size.height = screenFrame.size.height;
-    }
-
-    [self.window setFrame:windowFrame display:NO];
-
-    JBRReaderWindowController* lastWindowController = nil;
-    for ( JBRReaderWindowController* windowController in [[JBRReaderWindowManager shared] windowControllers] ) {
-        if (windowController != self) {
-            lastWindowController = windowController;
+- (void) showWithUrlString:(NSString* _Nullable) urlString viaStateRestoration:(BOOL) viaStateRestoration {
+    NSLog(@"self.window.delegate: %@", self.window.delegate);
+    if (!viaStateRestoration) {
+        /*
+         The first window should be vertically centered, and 900x1200 points -- or as close to that as possible
+         while fitting inside the main screen's visible frame. Subsequent windows should be cascaded.
+         */
+        CGFloat desiredWidth = 900.0;
+        CGFloat desiredHeight = 1200.0;
+        NSRect screenFrame = [[NSScreen mainScreen] visibleFrame];
+        NSRect windowFrame = CGRectMake(screenFrame.origin.x + (screenFrame.size.width - desiredWidth) / 2.0, screenFrame.origin.y + (screenFrame.size.height - desiredHeight) / 2.0, desiredWidth, desiredHeight);
+        if (desiredWidth > screenFrame.size.width) {
+            windowFrame.origin.x = screenFrame.origin.x;
+            windowFrame.size.width = screenFrame.size.width;
         }
-    }
-    if (lastWindowController) {
-        self.cascadedToPoint = [self.window cascadeTopLeftFromPoint:lastWindowController.cascadedToPoint];
+        if (desiredHeight > screenFrame.size.height) {
+            windowFrame.origin.y = screenFrame.origin.y;
+            windowFrame.size.height = screenFrame.size.height;
+        }
+        [self.window setFrame:windowFrame display:NO];
+
+        JBRReaderWindowController* lastWindowController = nil;
+        for ( JBRReaderWindowController* windowController in [[JBRReaderWindowManager shared] windowControllers] ) {
+            if (windowController != self) {
+                lastWindowController = windowController;
+            }
+        }
+        if (lastWindowController) {
+            self.cascadedToPoint = [self.window cascadeTopLeftFromPoint:lastWindowController.cascadedToPoint];
+        } else {
+            self.cascadedToPoint = [self.window cascadeTopLeftFromPoint:CGPointZero];
+        }
     } else {
+        // Set cascadedToPoint so that other windows can be cascaded relative to this point.
         self.cascadedToPoint = [self.window cascadeTopLeftFromPoint:CGPointZero];
     }
-    
+
     [self configureToolbar];
     self.urlBarViewController = [[JBRURLBarViewController alloc] init];
     self.urlBarViewController.delegate = (JBRReaderViewController*) self.contentViewController;
     ((JBRReaderViewController*) self.contentViewController).loadingDelegate = self.urlBarViewController;
     [self.window addTitlebarAccessoryViewController:self.urlBarViewController];
-    [super showWindow:sender];
+    
+    if (urlString) {
+        self.urlBarViewController.urlTextField.stringValue = urlString;
+        [(JBRReaderViewController*) self.contentViewController urlBarViewController:self.urlBarViewController urlStringChangedTo:urlString];
+    }
+    
+    if (!viaStateRestoration) {
+        [self showWindow:nil];
+    }
     [self.urlBarViewController makeUrlBarFirstResponder];
 }
 
@@ -98,6 +112,15 @@
 
 - (NSArray<NSToolbarItemIdentifier> *) toolbarItemIdentifiers {
     return @[NSToolbarFlexibleSpaceItemIdentifier, @"share"];
+}
+
+#pragma mark - NSWindowDelegate
+
+- (void) window:(NSWindow *)window willEncodeRestorableState:(NSCoder *)state {
+    NSString* urlString = [(JBRReaderViewController*) self.contentViewController urlString];
+    if (urlString) {
+        [state encodeObject:urlString forKey:@"urlString"];
+    }
 }
 
 @end

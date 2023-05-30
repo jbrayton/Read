@@ -5,12 +5,12 @@
 //  Created by John Brayton on 5/30/23.
 //
 
-#import <Foundation/Foundation.h>
+#import <AppKit/AppKit.h>
 @class JBRReaderWindowController;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JBRReaderWindowManager : NSObject
+@interface JBRReaderWindowManager : NSObject<NSWindowRestoration>
 
 @property (nonatomic, strong, readonly, nonnull) NSMutableArray* windowControllers;
 
