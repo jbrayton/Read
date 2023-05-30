@@ -14,6 +14,7 @@
 		2110108E2A25492D004B7025 /* JBRBundleSchemeHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2110108D2A25492D004B7025 /* JBRBundleSchemeHandler.m */; };
 		211010912A255062004B7025 /* lightmodecolors.css in Resources */ = {isa = PBXBuildFile; fileRef = 2110108F2A255061004B7025 /* lightmodecolors.css */; };
 		211010922A255062004B7025 /* darkmodecolors.css in Resources */ = {isa = PBXBuildFile; fileRef = 211010902A255061004B7025 /* darkmodecolors.css */; };
+		211010972A257DA1004B7025 /* JBRReaderWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 211010962A257DA1004B7025 /* JBRReaderWebView.m */; };
 		214BDB1A2A245A6200D7F8C9 /* JBRAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BDB192A245A6200D7F8C9 /* JBRAccessToken.m */; };
 		214BDB1C2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BDB1B2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m */; };
 		214BDB202A250A9100D7F8C9 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BDB1E2A250A9100D7F8C9 /* GTMNSString+HTML.m */; };
@@ -66,6 +67,8 @@
 		211010902A255061004B7025 /* darkmodecolors.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = darkmodecolors.css; sourceTree = "<group>"; };
 		211010932A257BE9004B7025 /* JBRReaderViewControllerLoadingDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRReaderViewControllerLoadingDelegate.h; sourceTree = "<group>"; };
 		211010942A257C7B004B7025 /* JBRURLBarViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRURLBarViewControllerDelegate.h; sourceTree = "<group>"; };
+		211010952A257DA1004B7025 /* JBRReaderWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRReaderWebView.h; sourceTree = "<group>"; };
+		211010962A257DA1004B7025 /* JBRReaderWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRReaderWebView.m; sourceTree = "<group>"; };
 		214BDB182A245A6200D7F8C9 /* JBRAccessToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRAccessToken.h; sourceTree = "<group>"; };
 		214BDB192A245A6200D7F8C9 /* JBRAccessToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAccessToken.m; sourceTree = "<group>"; };
 		214BDB1B2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAccessTokenUnitTests.m; sourceTree = "<group>"; };
@@ -220,6 +223,8 @@
 				21B41D422A23ABA7008E3FE2 /* JBRReaderViewController.h */,
 				211010932A257BE9004B7025 /* JBRReaderViewControllerLoadingDelegate.h */,
 				21B41D432A23ABA7008E3FE2 /* JBRReaderViewController.m */,
+				211010952A257DA1004B7025 /* JBRReaderWebView.h */,
+				211010962A257DA1004B7025 /* JBRReaderWebView.m */,
 				21B41D3F2A23AB51008E3FE2 /* JBRReaderWindowController.h */,
 				21B41D402A23AB51008E3FE2 /* JBRReaderWindowController.m */,
 				21B41D502A23E2D1008E3FE2 /* URL Bar */,
@@ -428,6 +433,7 @@
 				214BDB1A2A245A6200D7F8C9 /* JBRAccessToken.m in Sources */,
 				21B41D192A2396CB008E3FE2 /* main.m in Sources */,
 				2110108E2A25492D004B7025 /* JBRBundleSchemeHandler.m in Sources */,
+				211010972A257DA1004B7025 /* JBRReaderWebView.m in Sources */,
 				21B41D4C2A23CE52008E3FE2 /* JBRURLBarTextField.m in Sources */,
 				21B41D5D2A2443B5008E3FE2 /* JBRURLSessionDelegate.m in Sources */,
 				21B41D702A244CA9008E3FE2 /* JBRWebpageContentResponse.m in Sources */,
