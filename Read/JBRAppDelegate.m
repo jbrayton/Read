@@ -41,6 +41,7 @@
             [[JBRReaderWindowManager shared] createReaderWindowWithUrlString:urlString];
         }
     }
+    
 }
 
 - (NSString* _Nullable) readUrlStringFromUrl:(NSURL*) inputUrl {
