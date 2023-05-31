@@ -13,6 +13,7 @@
 @protocol JBRReaderViewControllerLoadingDelegate
 
 - (void) readerViewController:(JBRReaderViewController*) readerViewController setLoadingPage:(BOOL) loadingPage;
+- (void) readerViewController:(JBRReaderViewController*) readerViewController urlStringSetTo:(NSString*) urlString;
 
 @end
 

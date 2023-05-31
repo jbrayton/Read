@@ -98,6 +98,7 @@
 - (void) showWebpageContentResponse:(JBRWebpageContentResponse*) webpageContentResponse {
     NSString* html = [JBRHTMLGenerator generateForWebpageContentResponse:webpageContentResponse];
     [self.webView loadHTMLString:html baseURL:nil];
+    [self.loadingDelegate readerViewController:self urlStringSetTo:webpageContentResponse.responseUrlString];
 }
 
 - (void) showFailureToLoad {
