@@ -10,13 +10,11 @@
 @class JBRAccessTokenResponse;
 @class JBRWebpageContentResponse;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface JBRWebpageTextService : NSObject
 
 
 // Access outside of the class is really for testing only.
-@property (nonatomic, strong, readonly, nullable) NSMutableArray* accessTokenCallbacks;
+@property (nonatomic, strong, readonly) NSMutableArray* accessTokenCallbacks;
 
 + (JBRWebpageTextService*) shared;
 
@@ -33,5 +31,3 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) getWebpageContentForUrlString:(NSString*) urlString accessToken:(NSString*) accessToken completionHandler:(void (^)(JBRWebpageContentResponse*))completionHandler;
 
 @end
-
-NS_ASSUME_NONNULL_END

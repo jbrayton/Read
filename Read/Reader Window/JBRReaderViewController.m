@@ -16,9 +16,9 @@
 
 @interface JBRReaderViewController ()<WKNavigationDelegate>
 
-@property (nonatomic, strong, nonnull) WKWebView* webView;
+@property (nonatomic, strong) WKWebView* webView;
 
-@property (nonatomic, strong, nullable) NSString* currentUrlString;
+@property (nonatomic, strong) NSString* currentUrlString;
 
 // Use this to avoid race condition, where:
 // 1. User enters a URL.
@@ -30,8 +30,8 @@
 @property (nonatomic, assign) NSInteger currentRequestCounter;
 
 // These are non-nil and shown when we cannot generate webpage text for the specified URL.
-@property (nonatomic, strong, nullable) NSTextField* webpageTextUnavailableLabel;
-@property (nonatomic, strong, nullable) NSButton* tryAgainButton;
+@property (nonatomic, strong) NSTextField* webpageTextUnavailableLabel;
+@property (nonatomic, strong) NSButton* tryAgainButton;
 
 @end
 
@@ -67,7 +67,7 @@
     NSInteger initialCurrentRequestCounter = self.currentRequestCounter;
     [self.loadingDelegate readerViewController:self setLoadingPage:YES];
     [self.view.window setTitle:urlString];
-    [[JBRWebpageTextService shared] getWebpageContentForUrlString:urlString completionHandler:^(JBRWebpageContentResponse * _Nullable webpageContentResponse) {
+    [[JBRWebpageTextService shared] getWebpageContentForUrlString:urlString completionHandler:^(JBRWebpageContentResponse * webpageContentResponse) {
         if (initialCurrentRequestCounter == weakSelf.currentRequestCounter) {
             
             // Let the loadingDelegate know that we are done. Put "self" into "strongSelf" so that we do not
@@ -133,7 +133,7 @@
     NSAccessibilityPostNotificationWithUserInfo(self.webView, NSAccessibilityAnnouncementRequestedNotification, userInfo);
 }
 
-- (NSString* _Nullable) urlString {
+- (NSString*) urlString {
     return self.currentUrlString;
 }
 
@@ -176,7 +176,7 @@
 
 // MARK: NSSharingServicePickerToolbarItemDelegate
 
-- (nonnull NSArray *)itemsForSharingServicePickerToolbarItem:(nonnull NSSharingServicePickerToolbarItem *)pickerToolbarItem {
+- (NSArray *)itemsForSharingServicePickerToolbarItem:(NSSharingServicePickerToolbarItem *)pickerToolbarItem {
     NSMutableArray* result = [NSMutableArray array];
     NSString* currentUrlString = self.currentUrlString;
     if (currentUrlString) {

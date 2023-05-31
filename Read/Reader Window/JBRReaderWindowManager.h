@@ -8,11 +8,9 @@
 #import <AppKit/AppKit.h>
 @class JBRReaderWindowController;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface JBRReaderWindowManager : NSObject<NSWindowRestoration>
 
-@property (nonatomic, strong, readonly, nonnull) NSMutableArray* windowControllers;
+@property (nonatomic, strong, readonly) NSMutableArray* windowControllers;
 
 + (JBRReaderWindowManager*) shared;
 - (void) createReaderWindow;
@@ -21,5 +19,3 @@ NS_ASSUME_NONNULL_BEGIN
 - (void) closingReaderWindowWithWindowController:(JBRReaderWindowController*) windowController;
 
 @end
-
-NS_ASSUME_NONNULL_END

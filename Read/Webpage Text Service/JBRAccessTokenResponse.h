@@ -7,15 +7,12 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface JBRAccessTokenResponse : NSObject
 
-@property (nonatomic, strong, nonnull, readonly) NSString* accessToken;
+@property (nonatomic, strong, readonly) NSString* accessToken;
 @property (nonatomic, assign, readonly) NSTimeInterval expiresInTimeInterval;
 
-+ (nullable JBRAccessTokenResponse*) fromJsonObject:(id) input;
++ (JBRAccessTokenResponse*) fromJsonObject:(id) input;
 
 @end
 
-NS_ASSUME_NONNULL_END

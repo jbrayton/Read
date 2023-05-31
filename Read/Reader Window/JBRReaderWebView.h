@@ -8,10 +8,6 @@
 #import <Foundation/Foundation.h>
 @import WebKit;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface JBRReaderWebView : WKWebView
 
 @end
-
-NS_ASSUME_NONNULL_END

@@ -13,16 +13,16 @@
 
 @interface JBRWebpageTextService ()
 
-@property (nonatomic, strong, nonnull) JBRURLSessionDelegate* urlSessionDelegate;
-@property (nonatomic, strong, nonnull) NSURLSession* urlSession;
+@property (nonatomic, strong) JBRURLSessionDelegate* urlSessionDelegate;
+@property (nonatomic, strong) NSURLSession* urlSession;
 
 // This stores the current access token. The `getWebpageContentForUrlString:completionHandler:` method
 // will get a new access token if it does not have one yet or if this one is expired.
 // It is possible, but unlikely, that the user is requesting webpage text for two pages at a time, and we
 // end up getting multiple access tokens that we do not need. This is harmless, but slightly wasteful.
-@property (nonatomic, strong, nonnull) JBRAccessToken* currentAccessToken;
+@property (nonatomic, strong) JBRAccessToken* currentAccessToken;
 
-@property (nonatomic, strong, nullable) NSMutableArray* accessTokenCallbacks;
+@property (nonatomic, strong) NSMutableArray* accessTokenCallbacks;
 
 @end
 
@@ -57,7 +57,7 @@ NSString* const CLIENT_SECRET = @"y!Tu3#P5m!Ec#Ee8Y%4PwYc4mP0E6L*h";
 /*
     This should be called on the main thread. The completion handler will be called on the main thread as well.
  */
-- (void) getWebpageContentForUrlString:(NSString*) urlString completionHandler:(void (^)(JBRWebpageContentResponse* _Nullable))completionHandler {
+- (void) getWebpageContentForUrlString:(NSString*) urlString completionHandler:(void (^)(JBRWebpageContentResponse*))completionHandler {
     if ((self.currentAccessToken) && ([self.currentAccessToken stillValid])) {
         [self getWebpageContentForUrlString:urlString accessToken:self.currentAccessToken.accessToken completionHandler:^(JBRWebpageContentResponse * contentResponse) {
             completionHandler(contentResponse);
@@ -89,7 +89,7 @@ NSString* const CLIENT_SECRET = @"y!Tu3#P5m!Ec#Ee8Y%4PwYc4mP0E6L*h";
 }
 
 // The completionHandler is always called on the main thread. It will be called with `nil` if an error occurs.
-- (void) getAccessTokenWithCompletionHandler:(void (^)(JBRAccessTokenResponse* _Nullable))completionHandler {
+- (void) getAccessTokenWithCompletionHandler:(void (^)(JBRAccessTokenResponse*))completionHandler {
     
     assert(NSThread.isMainThread);
     
@@ -110,7 +110,7 @@ NSString* const CLIENT_SECRET = @"y!Tu3#P5m!Ec#Ee8Y%4PwYc4mP0E6L*h";
     NSDictionary* payload = @{@"client_id": CLIENT_ID, @"client_secret": CLIENT_SECRET, @"scope": @"https://webpagetextapi.goldenhillsoftware.com/", @"grant_type": @"client_credentials"};
     NSData* payloadData = [NSJSONSerialization dataWithJSONObject:payload options:0 error:nil];
     [request setHTTPBody:payloadData];
-    NSURLSessionDataTask* task = [_urlSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSURLSessionDataTask* task = [_urlSession dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
         NSDictionary* jsonObject = [self jsonObjectIfLooksLikeGoodJsonData:data urlResponse:response error:error requestDescription:@"retrieving access token"];
         JBRAccessTokenResponse* accessTokenResponse = [JBRAccessTokenResponse fromJsonObject:jsonObject];
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -119,7 +119,7 @@ NSString* const CLIENT_SECRET = @"y!Tu3#P5m!Ec#Ee8Y%4PwYc4mP0E6L*h";
             }
             NSArray* callbacks = weakSelf.accessTokenCallbacks;
             if (callbacks) {
-                for( id (^callback)(JBRAccessTokenResponse* _Nullable) in callbacks ) {
+                for( id (^callback)(JBRAccessTokenResponse*) in callbacks ) {
                     callback(accessTokenResponse);
                 }
                 weakSelf.accessTokenCallbacks = nil;
@@ -130,7 +130,7 @@ NSString* const CLIENT_SECRET = @"y!Tu3#P5m!Ec#Ee8Y%4PwYc4mP0E6L*h";
 }
 
 // The completionHandler is always called on the main thread. It will be called with `nil` if an error occurs.
-- (void) getWebpageContentForUrlString:(NSString*) urlString accessToken:(NSString*) accessToken completionHandler:(void (^)(JBRWebpageContentResponse* _Nullable))completionHandler {
+- (void) getWebpageContentForUrlString:(NSString*) urlString accessToken:(NSString*) accessToken completionHandler:(void (^)(JBRWebpageContentResponse*))completionHandler {
     NSURL* url = [NSURL URLWithString:@"https://webpagetextapi.goldenhillsoftware.com/1.0/retrievals"];
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:url];
     [request setHTTPMethod:@"POST"];
@@ -139,7 +139,7 @@ NSString* const CLIENT_SECRET = @"y!Tu3#P5m!Ec#Ee8Y%4PwYc4mP0E6L*h";
     NSDictionary* payload = @{@"url": urlString};
     NSData* payloadData = [NSJSONSerialization dataWithJSONObject:payload options:0 error:nil];
     [request setHTTPBody:payloadData];
-    NSURLSessionDataTask* task = [_urlSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+    NSURLSessionDataTask* task = [_urlSession dataTaskWithRequest:request completionHandler:^(NSData * data, NSURLResponse * response, NSError * error) {
         NSDictionary* jsonObject = [self jsonObjectIfLooksLikeGoodJsonData:data urlResponse:response error:error requestDescription:@"retrieving webpage content"];
         JBRWebpageContentResponse* webpageContentResponse = [JBRWebpageContentResponse fromJsonObject:jsonObject];
         dispatch_async(dispatch_get_main_queue(), ^{

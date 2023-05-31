@@ -7,8 +7,6 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 /*
     This prevents redirects. The REST APIs should never respond with redirects. In that
     very unexpected scenario this delegate forces the request to fail.
@@ -16,5 +14,3 @@ NS_ASSUME_NONNULL_BEGIN
 @interface JBRURLSessionDelegate : NSObject<NSURLSessionDelegate>
 
 @end
-
-NS_ASSUME_NONNULL_END

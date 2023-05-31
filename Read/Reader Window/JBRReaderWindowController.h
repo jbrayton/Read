@@ -7,12 +7,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface JBRReaderWindowController : NSWindowController
 
-- (void) showWithUrlString:(NSString* _Nullable) urlString viaStateRestoration:(BOOL) viaStateRestoration;
+- (void) showWithUrlString:(NSString*) urlString viaStateRestoration:(BOOL) viaStateRestoration;
 
 @end
-
-NS_ASSUME_NONNULL_END

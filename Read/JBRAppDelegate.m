@@ -48,7 +48,7 @@
     
 }
 
-- (NSString* _Nullable) readUrlStringFromUrl:(NSURL*) inputUrl {
+- (NSString*) readUrlStringFromUrl:(NSURL*) inputUrl {
     NSURLComponents* urlComponents = [[NSURLComponents alloc] initWithURL:inputUrl resolvingAgainstBaseURL:NO];
     if (!urlComponents) {
         return nil;

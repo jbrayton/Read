@@ -9,10 +9,10 @@
 
 @implementation JBRWebpageContentResponse
 
-- (instancetype) initWithResponseUrlString:(nonnull NSString*) responseUrlString
-                                     title:(nullable NSString*) title
-                                    author:(nullable NSString*) author
-                                      html:(nullable NSString*) html {
+- (instancetype) initWithResponseUrlString:(NSString*) responseUrlString
+                                     title:(NSString*) title
+                                    author:(NSString*) author
+                                      html:(NSString*) html {
     self = [super init];
     if (self) {
         _responseUrlString = responseUrlString;
@@ -23,7 +23,7 @@
     return self;
 }
 
-+ (nullable JBRWebpageContentResponse*) fromJsonObject:(id) input {
++ (JBRWebpageContentResponse*) fromJsonObject:(id) input {
     if (![input isKindOfClass:[NSDictionary class]]) {
         return nil;
     }

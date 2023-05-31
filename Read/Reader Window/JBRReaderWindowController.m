@@ -13,7 +13,7 @@
 
 @interface JBRReaderWindowController ()<NSToolbarDelegate,NSWindowDelegate>
 
-@property (nonatomic, strong, nonnull) JBRURLBarViewController* urlBarViewController;
+@property (nonatomic, strong) JBRURLBarViewController* urlBarViewController;
 @property (nonatomic, readwrite, assign) CGPoint cascadedToPoint;
 
 @end
@@ -26,7 +26,7 @@
     self.window.restorationClass = [JBRReaderWindowManager class];
 }
 
-- (void) showWithUrlString:(NSString* _Nullable) urlString viaStateRestoration:(BOOL) viaStateRestoration {
+- (void) showWithUrlString:(NSString*) urlString viaStateRestoration:(BOOL) viaStateRestoration {
     NSLog(@"self.window.delegate: %@", self.window.delegate);
     if (!viaStateRestoration) {
         /*

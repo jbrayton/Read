@@ -7,19 +7,15 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface JBRWebpageContentResponse : NSObject
 
 // This might be different from the requested page URL if the website issued a redirect.
-@property (nonatomic, strong, nonnull, readonly) NSString* responseUrlString;
+@property (nonatomic, strong, readonly) NSString* responseUrlString;
 
-@property (nonatomic, strong, nullable, readonly) NSString* title;
-@property (nonatomic, strong, nullable, readonly) NSString* author;
-@property (nonatomic, strong, nullable, readonly) NSString* html;
+@property (nonatomic, strong, readonly) NSString* title;
+@property (nonatomic, strong, readonly) NSString* author;
+@property (nonatomic, strong, readonly) NSString* html;
 
-+ (nullable JBRWebpageContentResponse*) fromJsonObject:(id) input;
++ (JBRWebpageContentResponse*) fromJsonObject:(id) input;
 
 @end
-
-NS_ASSUME_NONNULL_END

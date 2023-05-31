@@ -18,7 +18,7 @@
     return self;
 }
 
-+ (nullable JBRAccessTokenResponse*) fromJsonObject:(id) input {
++ (JBRAccessTokenResponse*) fromJsonObject:(id) input {
     if (![input isKindOfClass:[NSDictionary class]]) {
         return nil;
     }

@@ -30,7 +30,7 @@
     NSExtensionItem *item = self.extensionContext.inputItems.firstObject;
     for( NSItemProvider* attachment in [item attachments] ) {
         if ([attachment hasItemConformingToTypeIdentifier:@"public.url"]) {
-            [attachment loadItemForTypeIdentifier:@"public.url" options:nil completionHandler:^(__kindof id<NSSecureCoding>  _Nullable item, NSError * _Null_unspecified error) {
+            [attachment loadItemForTypeIdentifier:@"public.url" options:nil completionHandler:^(__kindof id<NSSecureCoding> item, NSError * _Null_unspecified error) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     NSData* data = (NSData*) item;
                     NSURL* inputUrl = [[NSURL alloc] initWithDataRepresentation:data relativeToURL:nil];
@@ -58,7 +58,7 @@
         NSWorkspaceOpenConfiguration* config = [[NSWorkspaceOpenConfiguration alloc] init];
         [config setActivates:YES];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-            [[NSWorkspace sharedWorkspace] openURL:outputUrl configuration:config completionHandler:^(NSRunningApplication * _Nullable app, NSError * _Nullable error) {
+            [[NSWorkspace sharedWorkspace] openURL:outputUrl configuration:config completionHandler:^(NSRunningApplication * app, NSError * error) {
             }];
         });
         [weakSelf.extensionContext completeRequestReturningItems:@[[[NSExtensionItem alloc] init]] completionHandler:nil];

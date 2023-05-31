@@ -11,7 +11,7 @@
 
 @interface JBRReaderWindowManager ()
 
-@property (nonatomic, strong, readwrite, nonnull) NSMutableArray* windowControllers;
+@property (nonatomic, strong, readwrite) NSMutableArray* windowControllers;
 
 @end
 
@@ -65,7 +65,7 @@
     [self.windowControllers removeObject:windowController];
 }
 
-+ (void) restoreWindowWithIdentifier:(NSUserInterfaceItemIdentifier)identifier state:(NSCoder *)state completionHandler:(void (^)(NSWindow * _Nullable, NSError * _Nullable))completionHandler {
++ (void) restoreWindowWithIdentifier:(NSUserInterfaceItemIdentifier)identifier state:(NSCoder *)state completionHandler:(void (^)(NSWindow *, NSError *))completionHandler {
     NSString* urlString = [state decodeObjectForKey:@"urlString"];
     JBRReaderWindowController* windowController = [self.shared internalCreateReaderWindowWithUrlString:urlString viaStateRestoration:YES];
     completionHandler(windowController.window, nil);

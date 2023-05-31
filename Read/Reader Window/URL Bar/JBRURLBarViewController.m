@@ -11,8 +11,8 @@
 
 @interface JBRURLBarViewController ()<NSTextFieldDelegate>
 
-@property (nonatomic, strong, nullable) NSTextField* urlTextField;
-@property (nonatomic, strong, nullable) NSProgressIndicator* progressIndicator;
+@property (nonatomic, strong) NSTextField* urlTextField;
+@property (nonatomic, strong) NSProgressIndicator* progressIndicator;
 
 // This keeps track of whether the progress indicator should be animating.
 @property (nonatomic, assign) BOOL currentlyLoading;

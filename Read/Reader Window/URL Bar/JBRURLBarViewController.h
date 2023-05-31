@@ -12,15 +12,11 @@
 @class JBRURLBarViewController;
 @protocol JBRReaderViewControllerLoadingDelegate;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface JBRURLBarViewController : NSTitlebarAccessoryViewController<JBRReaderViewControllerLoadingDelegate>
 
-@property (nonatomic, strong, readonly, nullable) NSTextField* urlTextField;
-@property (nonatomic, weak, nullable) id<JBRURLBarViewControllerDelegate> delegate;
+@property (nonatomic, strong, readonly) NSTextField* urlTextField;
+@property (nonatomic, weak) id<JBRURLBarViewControllerDelegate> delegate;
 
 - (void) makeUrlBarFirstResponder;
 
 @end
-
-NS_ASSUME_NONNULL_END

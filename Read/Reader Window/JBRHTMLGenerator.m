@@ -62,7 +62,7 @@
     return result;
 }
 
-+ (NSString*) encodedString:(NSString* _Nullable) input {
++ (NSString*) encodedString:(NSString*) input {
     if ([input length]) {
         return [input gtm_stringByEscapingForHTML];
     } else {
@@ -77,7 +77,7 @@
     - It converts the host to all lowercase.
     - If the host is blank or if the URL cannot be parsed, it returns nil.
  */
-+ (NSString* _Nullable) websiteDomainFromUrlString:(NSString*) urlString {
++ (NSString*) websiteDomainFromUrlString:(NSString*) urlString {
     const NSString* prefixToRemove = @"www.";
     NSURL* url = [NSURL URLWithString:urlString];
     if (!url) {

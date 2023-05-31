@@ -9,7 +9,7 @@
 
 @implementation JBRBundleSchemeHandler
 
-- (void)webView:(nonnull WKWebView *)webView startURLSchemeTask:(nonnull id<WKURLSchemeTask>)urlSchemeTask {
+- (void)webView:(WKWebView *)webView startURLSchemeTask:(id<WKURLSchemeTask>)urlSchemeTask {
     NSURL* url = urlSchemeTask.request.URL;
     NSString* filename = [url lastPathComponent];
     
@@ -29,7 +29,7 @@
     [urlSchemeTask didFinish];
 }
 
-- (void)webView:(nonnull WKWebView *)webView stopURLSchemeTask:(nonnull id<WKURLSchemeTask>)urlSchemeTask {
+- (void)webView:(WKWebView *)webView stopURLSchemeTask:(id<WKURLSchemeTask>)urlSchemeTask {
     //
 }
 

@@ -8,15 +8,11 @@
 #import <Foundation/Foundation.h>
 @class JBRWebpageContentResponse;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface JBRHTMLGenerator : NSObject
 
 + (NSString*) generateForWebpageContentResponse:(JBRWebpageContentResponse*) webpageContentResponse;
 
 // This should only be called externally from tests.
-+ (NSString* _Nullable) websiteDomainFromUrlString:(NSString*) urlString;
++ (NSString*) websiteDomainFromUrlString:(NSString*) urlString;
 
 @end
-
-NS_ASSUME_NONNULL_END

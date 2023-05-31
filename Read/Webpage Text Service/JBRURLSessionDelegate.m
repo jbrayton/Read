@@ -13,7 +13,7 @@
               task:(NSURLSessionTask *)task
 willPerformHTTPRedirection:(NSHTTPURLResponse *)response
         newRequest:(NSURLRequest *)request
- completionHandler:(void (^)(NSURLRequest * _Nullable))completionHandler{
+ completionHandler:(void (^)(NSURLRequest *))completionHandler{
     completionHandler(nil);
 }
 

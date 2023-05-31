@@ -12,14 +12,10 @@
 @class JBRReaderViewController;
 @protocol JBRURLBarViewControllerDelegate;
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface JBRReaderViewController : NSViewController<JBRURLBarViewControllerDelegate,NSSharingServicePickerToolbarItemDelegate>
 
-@property (nonatomic, weak, nullable) id<JBRReaderViewControllerLoadingDelegate> loadingDelegate;
+@property (nonatomic, weak) id<JBRReaderViewControllerLoadingDelegate> loadingDelegate;
 
-- (NSString* _Nullable) urlString;
+- (NSString*) urlString;
 
 @end
-
-NS_ASSUME_NONNULL_END
