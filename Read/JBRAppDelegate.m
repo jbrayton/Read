@@ -34,4 +34,29 @@
     [[JBRReaderWindowManager shared] createReaderWindow];
 }
 
+- (void) application:(NSApplication *)application openURLs:(NSArray<NSURL *> *)urls {
+    for( NSURL* url in urls ) {
+        NSString* urlString = [self readUrlStringFromUrl:url];
+        if (urlString) {
+            [[JBRReaderWindowManager shared] createReaderWindowWithUrlString:urlString];
+        }
+    }
+}
+
+- (NSString* _Nullable) readUrlStringFromUrl:(NSURL*) inputUrl {
+    NSURLComponents* urlComponents = [[NSURLComponents alloc] initWithURL:inputUrl resolvingAgainstBaseURL:NO];
+    if (!urlComponents) {
+        return nil;
+    }
+    if ([[urlComponents scheme] isEqualToString:@"read-http"]) {
+        [urlComponents setScheme:@"http"];
+        return [[urlComponents URL] absoluteString];
+    }
+    if ([[urlComponents scheme] isEqualToString:@"read-https"]) {
+        [urlComponents setScheme:@"https"];
+        return [[urlComponents URL] absoluteString];
+    }
+    return nil;
+}
+
 @end

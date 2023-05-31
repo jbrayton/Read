@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (JBRReaderWindowManager*) shared;
 - (void) createReaderWindow;
+- (void) createReaderWindowWithUrlString:(NSString*) urlString;
 - (void) createReaderWindowIfNone;
 - (void) closingReaderWindowWithWindowController:(JBRReaderWindowController*) windowController;
 

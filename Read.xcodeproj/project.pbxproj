@@ -16,6 +16,7 @@
 		211010922A255062004B7025 /* darkmodecolors.css in Resources */ = {isa = PBXBuildFile; fileRef = 211010902A255061004B7025 /* darkmodecolors.css */; };
 		211010972A257DA1004B7025 /* JBRReaderWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 211010962A257DA1004B7025 /* JBRReaderWebView.m */; };
 		2110109A2A267AD7004B7025 /* JBRReaderWindowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 211010992A267AD7004B7025 /* JBRReaderWindowManager.m */; };
+		2110109D2A26E05E004B7025 /* JBRAppDelegateUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2110109C2A26E05E004B7025 /* JBRAppDelegateUnitTests.m */; };
 		214BDB1A2A245A6200D7F8C9 /* JBRAccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BDB192A245A6200D7F8C9 /* JBRAccessToken.m */; };
 		214BDB1C2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BDB1B2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m */; };
 		214BDB202A250A9100D7F8C9 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 214BDB1E2A250A9100D7F8C9 /* GTMNSString+HTML.m */; };
@@ -72,6 +73,8 @@
 		211010962A257DA1004B7025 /* JBRReaderWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRReaderWebView.m; sourceTree = "<group>"; };
 		211010982A267AD7004B7025 /* JBRReaderWindowManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRReaderWindowManager.h; sourceTree = "<group>"; };
 		211010992A267AD7004B7025 /* JBRReaderWindowManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRReaderWindowManager.m; sourceTree = "<group>"; };
+		2110109B2A26D4E5004B7025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		2110109C2A26E05E004B7025 /* JBRAppDelegateUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAppDelegateUnitTests.m; sourceTree = "<group>"; };
 		214BDB182A245A6200D7F8C9 /* JBRAccessToken.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JBRAccessToken.h; sourceTree = "<group>"; };
 		214BDB192A245A6200D7F8C9 /* JBRAccessToken.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAccessToken.m; sourceTree = "<group>"; };
 		214BDB1B2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JBRAccessTokenUnitTests.m; sourceTree = "<group>"; };
@@ -193,6 +196,7 @@
 		21B41D0C2A2396C6008E3FE2 /* Read */ = {
 			isa = PBXGroup;
 			children = (
+				2110109B2A26D4E5004B7025 /* Info.plist */,
 				21B41D0D2A2396C6008E3FE2 /* JBRAppDelegate.h */,
 				21B41D0E2A2396C6008E3FE2 /* JBRAppDelegate.m */,
 				21B41D132A2396CB008E3FE2 /* Assets.xcassets */,
@@ -209,6 +213,7 @@
 		21B41D222A2396CB008E3FE2 /* Read Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
+				2110109C2A26E05E004B7025 /* JBRAppDelegateUnitTests.m */,
 				214BDB252A25136000D7F8C9 /* Reader Window */,
 				21B41D582A23F270008E3FE2 /* Webpage Text Service */,
 			);
@@ -455,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2110109D2A26E05E004B7025 /* JBRAppDelegateUnitTests.m in Sources */,
 				21B41D5A2A23F295008E3FE2 /* JBRAccessTokenResponseUnitTests.m in Sources */,
 				21B41D722A244E04008E3FE2 /* JBRWebpageContentResponseUnitTests.m in Sources */,
 				214BDB1C2A245B6400D7F8C9 /* JBRAccessTokenUnitTests.m in Sources */,
@@ -618,6 +624,7 @@
 				DEVELOPMENT_TEAM = 372S63A2R8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Read/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -644,6 +651,7 @@
 				DEVELOPMENT_TEAM = 372S63A2R8;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Read/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;

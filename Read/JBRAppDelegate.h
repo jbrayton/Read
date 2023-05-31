@@ -9,6 +9,8 @@
 
 @interface JBRAppDelegate : NSObject <NSApplicationDelegate>
 
+- (NSString* _Nullable) readUrlStringFromUrl:(NSURL*_Nonnull) inputUrl;
+
 
 @end
 

@@ -39,6 +39,10 @@
     [self internalCreateReaderWindowWithUrlString:nil viaStateRestoration:NO];
 }
 
+- (void) createReaderWindowWithUrlString:(NSString*) urlString {
+    [self internalCreateReaderWindowWithUrlString:urlString viaStateRestoration:NO];
+}
+
 - (void) createReaderWindowIfNone {
     if ([self.windowControllers count] == 0) {
         [self internalCreateReaderWindowWithUrlString:nil viaStateRestoration:NO];
