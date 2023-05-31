@@ -78,4 +78,34 @@
     XCTAssertEqualObjects(firstAccessToken.accessToken, secondAccessToken.accessToken);
 }
 
+- (void) testMultipleSimultaneousAccessTokenRequests {
+    JBRWebpageTextService* service = [JBRWebpageTextService createTestableInstance];
+    
+    __block JBRAccessTokenResponse* firstAccessTokenResponse;
+    __block JBRAccessTokenResponse* secondAccessTokenResponse;
+    
+    XCTestExpectation* firstExpectation = [self expectationWithDescription:@"first expectation"];
+    XCTestExpectation* secondExpectation = [self expectationWithDescription:@"second expectation"];
+    
+    [service getAccessTokenWithCompletionHandler:^(JBRAccessTokenResponse * accessTokenResponse) {
+        firstAccessTokenResponse = accessTokenResponse;
+        [firstExpectation fulfill];
+    }];
+    
+    [service getAccessTokenWithCompletionHandler:^(JBRAccessTokenResponse * accessTokenResponse) {
+        secondAccessTokenResponse = accessTokenResponse;
+        [secondExpectation fulfill];
+    }];
+    
+    [self waitForExpectations:@[firstExpectation, secondExpectation]];
+    
+    XCTAssertNotNil(firstAccessTokenResponse);
+    XCTAssertNotNil(secondAccessTokenResponse);
+    XCTAssertEqualObjects(firstAccessTokenResponse.accessToken, secondAccessTokenResponse.accessToken);
+    
+    // Verify that the callbacks have been removed, so they will
+    // not be called again.
+    XCTAssertNil(service.accessTokenCallbacks);
+}
+
 @end

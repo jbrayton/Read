@@ -7,6 +7,7 @@
 
 #import "JBRAppDelegate.h"
 #import "JBRReaderWindowManager.h"
+#import "JBRWebpageTextService.h"
 #import <Cocoa/Cocoa.h>
 
 @interface JBRAppDelegate ()
@@ -16,6 +17,7 @@
 @implementation JBRAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    [[JBRWebpageTextService shared] preloadAccessToken];
     [[JBRReaderWindowManager shared] createReaderWindowIfNone];
 }
 
@@ -24,6 +26,7 @@
 }
 
 - (IBAction) createNewReaderWindow:(id) sender {
+    [[JBRWebpageTextService shared] preloadAccessToken];
     [[JBRReaderWindowManager shared] createReaderWindow];
 }
 
@@ -31,6 +34,7 @@
 // text field in the URL bar. If the app delegate is the first responder, it will
 // create a new window.
 - (IBAction) openLocation:(id) sender {
+    [[JBRWebpageTextService shared] preloadAccessToken];
     [[JBRReaderWindowManager shared] createReaderWindow];
 }
 

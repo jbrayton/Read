@@ -7,8 +7,9 @@
 
 #import "JBRReaderWindowController.h"
 #import "JBRReaderWindowManager.h"
-#import "JBRURLBarViewController.h"
 #import "JBRReaderViewController.h"
+#import "JBRURLBarViewController.h"
+#import "JBRWebpageTextService.h"
 
 @interface JBRReaderWindowController ()<NSToolbarDelegate,NSWindowDelegate>
 
@@ -80,6 +81,7 @@
 }
 
 - (IBAction) openLocation:(id) sender {
+    [[JBRWebpageTextService shared] preloadAccessToken];
     [self.urlBarViewController makeUrlBarFirstResponder];
 }
 

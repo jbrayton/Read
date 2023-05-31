@@ -22,6 +22,8 @@
 // end up getting multiple access tokens that we do not need. This is harmless, but slightly wasteful.
 @property (nonatomic, strong, nonnull) JBRAccessToken* currentAccessToken;
 
+@property (nonatomic, strong, nullable) NSMutableArray* accessTokenCallbacks;
+
 @end
 
 @implementation JBRWebpageTextService
@@ -56,8 +58,8 @@ NSString* const CLIENT_SECRET = @"y!Tu3#P5m!Ec#Ee8Y%4PwYc4mP0E6L*h";
     This should be called on the main thread. The completion handler will be called on the main thread as well.
  */
 - (void) getWebpageContentForUrlString:(NSString*) urlString completionHandler:(void (^)(JBRWebpageContentResponse* _Nullable))completionHandler {
-    if ((_currentAccessToken) && ([_currentAccessToken stillValid])) {
-        [self getWebpageContentForUrlString:urlString accessToken:_currentAccessToken.accessToken completionHandler:^(JBRWebpageContentResponse * contentResponse) {
+    if ((self.currentAccessToken) && ([self.currentAccessToken stillValid])) {
+        [self getWebpageContentForUrlString:urlString accessToken:self.currentAccessToken.accessToken completionHandler:^(JBRWebpageContentResponse * contentResponse) {
             completionHandler(contentResponse);
         }];
     } else {
@@ -72,12 +74,35 @@ NSString* const CLIENT_SECRET = @"y!Tu3#P5m!Ec#Ee8Y%4PwYc4mP0E6L*h";
     }
 }
 
+- (void) preloadAccessToken {
+    __weak JBRWebpageTextService* weakSelf = self;
+    if (![self.currentAccessToken stillValid]) {
+        [self getAccessTokenWithCompletionHandler:^(JBRAccessTokenResponse * accessTokenResponse) {
+            NSDate* expirationDate = [[NSDate date] dateByAddingTimeInterval:accessTokenResponse.expiresInTimeInterval];
+            weakSelf.currentAccessToken = [[JBRAccessToken alloc] initWithAccessToken:accessTokenResponse.accessToken expirationDate:expirationDate];
+        }];
+    }
+}
+
 - (void) dealloc {
     [_urlSession finishTasksAndInvalidate];
 }
 
 // The completionHandler is always called on the main thread. It will be called with `nil` if an error occurs.
 - (void) getAccessTokenWithCompletionHandler:(void (^)(JBRAccessTokenResponse* _Nullable))completionHandler {
+    
+    assert(NSThread.isMainThread);
+    
+    __weak JBRWebpageTextService* weakSelf = self;
+    
+    if (self.accessTokenCallbacks) {
+        [self.accessTokenCallbacks addObject:completionHandler];
+        return;
+    }
+    
+    self.accessTokenCallbacks = [NSMutableArray array];
+    [self.accessTokenCallbacks addObject:completionHandler];
+
     NSURL* url = [NSURL URLWithString:@"https://auth.goldenhillsoftware.com/1.0/tokens"];
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] initWithURL:url];
     [request setHTTPMethod:@"POST"];
@@ -91,10 +116,14 @@ NSString* const CLIENT_SECRET = @"y!Tu3#P5m!Ec#Ee8Y%4PwYc4mP0E6L*h";
         dispatch_async(dispatch_get_main_queue(), ^{
             if (!accessTokenResponse) {
                 NSLog(@"Unable to create access token response from JSON.");
-                completionHandler(nil);
-                return;
             }
-            completionHandler(accessTokenResponse);
+            NSArray* callbacks = weakSelf.accessTokenCallbacks;
+            if (callbacks) {
+                for( id (^callback)(JBRAccessTokenResponse* _Nullable) in callbacks ) {
+                    callback(accessTokenResponse);
+                }
+                weakSelf.accessTokenCallbacks = nil;
+            }
         });
     }];
     [task resume];
