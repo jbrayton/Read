@@ -19,6 +19,7 @@
     XCTAssertEqualObjects([[[JBRAppDelegate alloc] init] readUrlStringFromUrl:[NSURL URLWithString:@"read-http://www.google.com/foobar/"]], @"http://www.google.com/foobar/");
     XCTAssertNil([[[JBRAppDelegate alloc] init] readUrlStringFromUrl:[NSURL URLWithString:@"read-dsdf://www.google.com/foobar/"]]);
     XCTAssertNil([[[JBRAppDelegate alloc] init] readUrlStringFromUrl:[NSURL URLWithString:@"aaf-dsdf://www.google.com/foobar/"]]);
+    XCTAssertNil([[[JBRAppDelegate alloc] init] readUrlStringFromUrl:[NSURL URLWithString:@"read://www.google.com/foobar/"]]);
 }
 
 @end

@@ -47,8 +47,12 @@
 }
 
 /*
-    Safari tends to bring itself to the foreground after the extension is dismissed. So we dismiss the extension
-    and then send the URL to Read 0.5 seconds later so that the end result is Read being in the foreground.
+    Safari tends to bring itself to the foreground after the extension is dismissed.
+    Therefore this method opens the Read app as follows:
+    - It immediately opens a read-http(s):// URL in the background (activates: NO),
+      so that the article immediately begins to load.
+    - It dismisses the extension with `completeRequestReturningItems`.
+    - After 0.25 seconds it opens the URL "read:" in the foreground (activates: YES). The app does not do anything with that URL, but it brings the app to the foreground.
  */
 - (void) openUrlString:(NSString*) inputUrlString {
     __weak JBRShareViewController* weakSelf = self;
@@ -56,9 +60,13 @@
     NSURL* outputUrl = [NSURL URLWithString:outputUrlString];
     if (outputUrl) {
         NSWorkspaceOpenConfiguration* config = [[NSWorkspaceOpenConfiguration alloc] init];
-        [config setActivates:YES];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-            [[NSWorkspace sharedWorkspace] openURL:outputUrl configuration:config completionHandler:^(NSRunningApplication * app, NSError * error) {
+        [config setActivates:NO];
+        [[NSWorkspace sharedWorkspace] openURL:outputUrl configuration:config completionHandler:^(NSRunningApplication * app, NSError * error) {
+        }];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 0.25 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [config setActivates:YES];
+            NSURL* bringToFrontUrl = [NSURL URLWithString:@"read:"];
+            [[NSWorkspace sharedWorkspace] openURL:bringToFrontUrl configuration:config completionHandler:^(NSRunningApplication * app, NSError * error) {
             }];
         });
         [weakSelf.extensionContext completeRequestReturningItems:@[[[NSExtensionItem alloc] init]] completionHandler:nil];

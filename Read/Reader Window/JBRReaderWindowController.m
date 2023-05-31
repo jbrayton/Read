@@ -27,7 +27,6 @@
 }
 
 - (void) showWithUrlString:(NSString*) urlString viaStateRestoration:(BOOL) viaStateRestoration {
-    NSLog(@"self.window.delegate: %@", self.window.delegate);
     if (!viaStateRestoration) {
         /*
          The first window should be vertically centered, and 900x1200 points -- or as close to that as possible

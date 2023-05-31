@@ -26,6 +26,16 @@
 				<string>read-http</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>read</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>read</string>
+			</array>
+		</dict>
 	</array>
 </dict>
 </plist>
