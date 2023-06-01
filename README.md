@@ -7,7 +7,7 @@ I wrote this app to demonstrate my ability to write a Mac app in Objective-C. Al
 ## Nice touches in the app:
 
 * The app supports light mode and dark mode.
-* The app supports opening webpage content with a `read-http:` URL scheme and a `read-https:` URL scheme. For example the `read-https://figure53.com/jobs/` URL opens the app with the jobs page of the Figure 53 website.
+* The app supports opening webpage content with a `read-http:` URL scheme and a `read-https:` URL scheme. For example the [read-https://figure53.com/jobs/](read-https://figure53.com/jobs/) URL opens the app with the jobs page of the Figure 53 website.
 * The app includes a share extension. When on a webpage in Safari or another browser, open the share menu or popover and select “Read”. This app will open with the article content of the webpage.
 * The app supports state restoration.
 * The app preloads an access token for the service when it is likely that the user is about to request article content for a new webpage: when the user launches the app, when the user creates a new empty window, and when the user selects Open Location from the File menu.
