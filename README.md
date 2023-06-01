@@ -1,4 +1,6 @@
-This is a Mac app called Read. It operates somewhat like a web browser, but it just shows article content for the requested page. It uses my [Webpage Text API](https://www.goldenhillsoftware.com/webpage-text-api/) to get article content without the junk (chrome, navigation, ads, and scripts) that tends to clutter modern webpages. When you follow a link in the app, it opens that link in Safari or the user’s default web browser.
+This is a Mac app called Read. It operates somewhat like a web browser, but it just shows article content for the requested page. It uses my [Webpage Text API](https://www.goldenhillsoftware.com/webpage-text-api/) to get article content without the junk (chrome, navigation, ads, and scripts) that tends to clutter modern webpages.  The view this app displays is somewhat similar to Safari’s Reader View. When you follow a link in the app, it opens that link in Safari or the user’s default web browser.
+
+<img src="screenshot.png" alt="Screenshot showing a 9to5Mac article" width="2024" height="1956">
 
 I wrote this app to demonstrate my ability to write a Mac app in Objective-C. All the code in this app is written in Objective-C and uses AppKit.
 
