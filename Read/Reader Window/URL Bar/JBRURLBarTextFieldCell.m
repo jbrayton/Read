@@ -8,7 +8,7 @@
 #import "JBRURLBarTextFieldCell.h"
 
 /*
-    I wanted a somewhat tall-looking text field with the text near the middle, like Safari. This subclass of NSTextFieldCell
+    I wanted a somewhat tall-looking text field with the text vertically centered, like Safari. This subclass of NSTextFieldCell
     insets the text.
  */
 @implementation JBRURLBarTextFieldCell

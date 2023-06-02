@@ -20,13 +20,13 @@
 
 @property (nonatomic, strong) NSString* currentUrlString;
 
-// Use this to avoid race condition, where:
+// Use this to avoid race a condition, where:
 // 1. User enters a URL.
 // 2. We start to retrieve webpage text, but it takes a while.
 // 3. User enters a second URL.
 // 4. We get the webpage text for the prior URL that the user no longer wants.
-// We increment this when the user requests a new URL. If the value does not match the value it had
-// when we requested the webpage text, we ignore the response.
+// We increment this when the user requests a new URL. If the value changed since
+// requesting the webpage text, we ignore the response.
 @property (nonatomic, assign) NSInteger currentRequestCounter;
 
 // These are non-nil and shown when we cannot generate webpage text for the specified URL.
@@ -147,8 +147,8 @@
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     
-    // Allow embedded frames to load. This is necessary for YouTube and other video players.
     if (!navigationAction.targetFrame.isMainFrame) {
+        // Allow embedded frames to load. This is necessary for YouTube and other video players.
         decisionHandler(WKNavigationActionPolicyAllow);
         return;
     }

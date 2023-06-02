@@ -10,7 +10,7 @@
 @implementation JBRReaderWebView
 
 /*
-    By default WKWebView context menus include items that will not work within this app:
+    By default WKWebView context menus include items that will not work from this app:
     - Open Link in New Window
     - Download Linked File
     - Open Image in New Window

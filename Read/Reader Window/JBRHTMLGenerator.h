@@ -10,6 +10,7 @@
 
 @interface JBRHTMLGenerator : NSObject
 
+// Generates a full HTML file based on webpage text HTML and other metadata.
 + (NSString*) generateForWebpageContentResponse:(JBRWebpageContentResponse*) webpageContentResponse;
 
 // This should only be called externally from tests.

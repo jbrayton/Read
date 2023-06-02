@@ -14,7 +14,7 @@
 
 @implementation JBRAppDelegateUnitTests
 
-- (void)testExample {
+- (void)testReadUrlStringFromUrl {
     XCTAssertEqualObjects([[[JBRAppDelegate alloc] init] readUrlStringFromUrl:[NSURL URLWithString:@"read-https://www.apple.com/foobar/"]], @"https://www.apple.com/foobar/");
     XCTAssertEqualObjects([[[JBRAppDelegate alloc] init] readUrlStringFromUrl:[NSURL URLWithString:@"read-http://www.google.com/foobar/"]], @"http://www.google.com/foobar/");
     XCTAssertNil([[[JBRAppDelegate alloc] init] readUrlStringFromUrl:[NSURL URLWithString:@"read-dsdf://www.google.com/foobar/"]]);

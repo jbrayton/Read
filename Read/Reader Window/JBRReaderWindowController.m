@@ -14,6 +14,9 @@
 @interface JBRReaderWindowController ()<NSToolbarDelegate,NSWindowDelegate>
 
 @property (nonatomic, strong) JBRURLBarViewController* urlBarViewController;
+
+// The initial top-left coordinate of the window. Use this to cascade a subsequent window
+// based on the location of this window.
 @property (nonatomic, readwrite, assign) CGPoint cascadedToPoint;
 
 @end
@@ -26,6 +29,7 @@
     self.window.restorationClass = [JBRReaderWindowManager class];
 }
 
+// Configures the window with appropriate dimensions, and calls showWindow: on the resulting window.
 - (void) showWithUrlString:(NSString*) urlString viaStateRestoration:(BOOL) viaStateRestoration {
     if (!viaStateRestoration) {
         /*
@@ -58,7 +62,8 @@
             self.cascadedToPoint = [self.window cascadeTopLeftFromPoint:CGPointZero];
         }
     } else {
-        // Set cascadedToPoint so that other windows can be cascaded relative to this point.
+        // The system used state restoration to determine the original top-left coordinate of the window.
+        // Set cascadedToPoint so that subsequent windows can be cascaded relative to this location.
         self.cascadedToPoint = [self.window cascadeTopLeftFromPoint:CGPointZero];
     }
 
@@ -68,6 +73,8 @@
     ((JBRReaderViewController*) self.contentViewController).loadingDelegate = self.urlBarViewController;
     [self.window addTitlebarAccessoryViewController:self.urlBarViewController];
     
+    // If we already have a URL (based on state restoration or read-http(s):// URL, request the webpage
+    // article content.
     if (urlString) {
         self.urlBarViewController.urlTextField.stringValue = urlString;
         [(JBRReaderViewController*) self.contentViewController urlBarViewController:self.urlBarViewController urlStringChangedTo:urlString];
@@ -79,8 +86,13 @@
     [self.urlBarViewController makeUrlBarFirstResponder];
 }
 
+// Called when ther selects "Open Location" from the "File" menu and the window is first responder.
 - (IBAction) openLocation:(id) sender {
+    
+    // It is likely that we will need to issue a request to the webpage text API soon, so get an
+    // access token ready.
     [[JBRWebpageTextService shared] preloadAccessToken];
+
     [self.urlBarViewController makeUrlBarFirstResponder];
 }
 
@@ -88,7 +100,7 @@
     [[JBRReaderWindowManager shared] closingReaderWindowWithWindowController:self];
 }
 
-#pragma mark - Toolbar
+// MARK: Toolbar
 
 - (void) configureToolbar {
     NSToolbar* toolbar = [[NSToolbar alloc] initWithIdentifier: @"com.goldenhillsoftware.Read.readerWindowToolbar"];
@@ -115,7 +127,7 @@
     return @[NSToolbarFlexibleSpaceItemIdentifier, @"share"];
 }
 
-#pragma mark - NSWindowDelegate
+// MARK: NSWindowDelegate
 
 - (void) window:(NSWindow *)window willEncodeRestorableState:(NSCoder *)state {
     NSString* urlString = [(JBRReaderViewController*) self.contentViewController urlString];

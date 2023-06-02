@@ -18,10 +18,10 @@
 @property (nonatomic, assign) BOOL currentlyLoading;
 
 // When we get a response back from the server, we change the urlTextField to the
-// server-specified URL. It might be different from that entered as the result of
+// server-specified URL. It might be different from the entered URL as the result of
 // redirects. But we do not want to change the urlTextField if the user started entering
 // a different URL. This keeps track of whether the user started entering a new URL
-// while fetching the page.
+// while fetching the page content.
 @property (nonatomic, assign) BOOL urlTextFieldHasChanges;
 
 @end
@@ -87,7 +87,7 @@
     self.urlTextFieldHasChanges = NO;
 }
 
-#pragma mark - JBRReaderViewControllerLoadingDelegate
+// MARK: JBRReaderViewControllerLoadingDelegate
 
 - (void) readerViewController:(JBRReaderViewController*) readerViewController setLoadingPage:(BOOL) loadingPage {
     if (loadingPage != _currentlyLoading) {
@@ -106,7 +106,7 @@
     }
 }
 
-#pragma mark - NSTextFieldDelegate
+// MARK: NSTextFieldDelegate
 
 - (void) controlTextDidBeginEditing:(NSNotification *)obj {
     self.urlTextFieldHasChanges = YES;

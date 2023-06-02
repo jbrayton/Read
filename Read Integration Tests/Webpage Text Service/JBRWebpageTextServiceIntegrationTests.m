@@ -17,6 +17,10 @@
 
 @implementation JBRWebpageTextServiceIntegrationTests
 
+/*
+    First retrieves an access token, and then requests webpage text for a webpage URL using that
+    access token.
+ */
 - (void) testRetrievingAccessTokenAndWebpageContent {
     __block JBRAccessTokenResponse* accessTokenResponse = nil;
     XCTestExpectation* accessTokenExpectation = [self expectationWithDescription:@"retrieve access token"];
@@ -78,6 +82,10 @@
     XCTAssertEqualObjects(firstAccessToken.accessToken, secondAccessToken.accessToken);
 }
 
+/*
+    Ensure that we are not issuing simultaneous requests for an access token by
+    requesting two access tokens and verifying that they are identical.
+ */
 - (void) testMultipleSimultaneousAccessTokenRequests {
     JBRWebpageTextService* service = [JBRWebpageTextService createTestableInstance];
     

@@ -11,6 +11,7 @@
 
 @implementation JBRHTMLGenerator
 
+// Generates a full HTML file based on webpage text HTML and other metadata.
 + (NSString*) generateForWebpageContentResponse:(JBRWebpageContentResponse*) webpageContentResponse {
     NSMutableString* result = [NSMutableString string];
     [result appendString:@"<html>"];
@@ -62,6 +63,7 @@
     return result;
 }
 
+// Return an HTML-coded string based on _input_. Return "" if _input_ is nil.
 + (NSString*) encodedString:(NSString*) input {
     if ([input length]) {
         return [input gtm_stringByEscapingForHTML];

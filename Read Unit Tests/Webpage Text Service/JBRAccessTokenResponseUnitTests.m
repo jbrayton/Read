@@ -16,7 +16,7 @@
 
 - (void)testFromJson {
     
-    // Verify that fromJsonObject: returns nil if the input is not a dictionary
+    // Verify that fromJsonObject: returns nil if the input is not a dictionary.
     XCTAssertNil([JBRAccessTokenResponse fromJsonObject:@[]]);
 
     // Verify that fromJsonObject: returns nil if the access token is not specified or is not a string.
@@ -26,7 +26,7 @@
     dictionary = @{ @"expires_in": @(35.4), @"a": @"b" };
     XCTAssertNil([JBRAccessTokenResponse fromJsonObject:dictionary]);
 
-    // Verify that fromJsonObject: returns nil if the expiration date is not parseable as a number
+    // Verify that fromJsonObject: returns nil if the expiration date is not parseable as a number.
     dictionary = @{ @"access_token": @"foobar" };
     XCTAssertNil([JBRAccessTokenResponse fromJsonObject:dictionary]);
 

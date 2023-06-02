@@ -17,7 +17,14 @@
 @implementation JBRAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    
+    // When launching the app, it is likely that the user will want to retrieve
+    // webpage text for a webpage URL. Therefore preload an access token for the
+    // webpage text service.
     [[JBRWebpageTextService shared] preloadAccessToken];
+    
+    // If state restoration did not create a window and if the user did not open the
+    // app with a read-http:// or read-https:// URL, create an empty window.
     [[JBRReaderWindowManager shared] createReaderWindowIfNone];
 }
 
@@ -26,7 +33,11 @@
 }
 
 - (IBAction) createNewReaderWindow:(id) sender {
+    // When creating a new window, it is likely that the user will want to retrieve
+    // webpage text for a webpage URL. Therefore preload an access token for the
+    // webpage text service.
     [[JBRWebpageTextService shared] preloadAccessToken];
+    
     [[JBRReaderWindowManager shared] createReaderWindow];
 }
 
@@ -34,9 +45,16 @@
 // text field in the URL bar. If the app delegate is the first responder, it will
 // create a new window.
 - (IBAction) openLocation:(id) sender {
+
+    // Since the user is about to edit the URL textfield, it is likely that the user will want to retrieve
+    // webpage text for a webpage URL. Therefore preload an access token for the
+    // webpage text service.
     [[JBRWebpageTextService shared] preloadAccessToken];
+
     [[JBRReaderWindowManager shared] createReaderWindow];
 }
+
+// MARK: Handle being opened by a URL.
 
 - (void) application:(NSApplication *)application openURLs:(NSArray<NSURL *> *)urls {
     for( NSURL* url in urls ) {

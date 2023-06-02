@@ -66,7 +66,7 @@
 }
 
 + (void) restoreWindowWithIdentifier:(NSUserInterfaceItemIdentifier)identifier state:(NSCoder *)state completionHandler:(void (^)(NSWindow *, NSError *))completionHandler {
-    NSString* urlString = [state decodeObjectForKey:@"urlString"];
+    NSString* urlString = [state decodeObjectOfClass:[NSString class] forKey:@"urlString"];
     JBRReaderWindowController* windowController = [self.shared internalCreateReaderWindowWithUrlString:urlString viaStateRestoration:YES];
     completionHandler(windowController.window, nil);
 }

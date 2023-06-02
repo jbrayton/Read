@@ -16,12 +16,13 @@
 @property (nonatomic, strong) JBRURLSessionDelegate* urlSessionDelegate;
 @property (nonatomic, strong) NSURLSession* urlSession;
 
-// This stores the current access token. The `getWebpageContentForUrlString:completionHandler:` method
-// will get a new access token if it does not have one yet or if this one is expired.
-// It is possible, but unlikely, that the user is requesting webpage text for two pages at a time, and we
-// end up getting multiple access tokens that we do not need. This is harmless, but slightly wasteful.
+// This stores the current access token. It may be nil or expired.
 @property (nonatomic, strong) JBRAccessToken* currentAccessToken;
 
+// When we are requesting an access token, this is an array of callback functions to
+// call when we have a response. This is nil when we are not requesting an access token.
+// If `getAccessTokenWithCompletionHandler:` is called when we already have an outstanding
+// request for an access token, a second callback will be added to `accessTokenCallbacks`.
 @property (nonatomic, strong) NSMutableArray* accessTokenCallbacks;
 
 @end
@@ -54,9 +55,7 @@ NSString* const CLIENT_SECRET = @"y!Tu3#P5m!Ec#Ee8Y%4PwYc4mP0E6L*h";
     return [[JBRWebpageTextService alloc] init];
 }
 
-/*
-    This should be called on the main thread. The completion handler will be called on the main thread as well.
- */
+// This must be called on the main thread. The completion handler will be called on the main thread as well.
 - (void) getWebpageContentForUrlString:(NSString*) urlString completionHandler:(void (^)(JBRWebpageContentResponse*))completionHandler {
     if ((self.currentAccessToken) && ([self.currentAccessToken stillValid])) {
         [self getWebpageContentForUrlString:urlString accessToken:self.currentAccessToken.accessToken completionHandler:^(JBRWebpageContentResponse * contentResponse) {
@@ -74,6 +73,8 @@ NSString* const CLIENT_SECRET = @"y!Tu3#P5m!Ec#Ee8Y%4PwYc4mP0E6L*h";
     }
 }
 
+// Call this when it is likely that we are going to issue a request to the webpage text service, but we do not yet
+// know what we will request.
 - (void) preloadAccessToken {
     __weak JBRWebpageTextService* weakSelf = self;
     if (![self.currentAccessToken stillValid]) {
