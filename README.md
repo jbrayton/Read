@@ -1,4 +1,4 @@
-This is a Mac app called Read. It operates somewhat like a web browser, but it just shows article content for the requested page. It uses my [Webpage Text API](https://www.goldenhillsoftware.com/webpage-text-api/) to get article content without the junk (chrome, navigation, ads, and scripts) that tends to clutter modern webpages.  The view this app displays is somewhat similar to Safari’s Reader View. When you follow a link in the app, it opens that link in Safari or the user’s default web browser.
+This is a Mac app called Read. It displays article content from a webpage in a manner similar to Safari’s Reader View. It uses my [Webpage Text API](https://www.goldenhillsoftware.com/webpage-text-api/) to get article content without the junk (chrome, navigation, ads, and scripts) that tends to clutter modern webpages.  
 
 <img src="screenshot.png" alt="Screenshot showing a 9to5Mac article" width="675" height="652">
 
@@ -7,7 +7,7 @@ I wrote this app to demonstrate my ability to write a Mac app in Objective-C. Al
 ## Nice touches in the app:
 
 * The app supports light mode and dark mode.
-* The app supports opening webpage content with a `read-http:` URL scheme and a `read-https:` URL scheme. For example the `read-https://figure53.com/jobs/` URL opens the app with the jobs page of the Figure 53 website.
+* The app can be opened with a `read-http://` URL or `read-https://` URL. For example the `read-https://figure53.com/jobs/` URL opens the app with the jobs page of the Figure 53 website.
 * The app includes a share extension. When on a webpage in Safari or another browser, open the share menu or popover and select “Read”. This app will open with the article content of the webpage.
 * The app supports state restoration.
 * The app preloads an access token for the service when it is likely that the user is about to request article content for a new webpage: when the user launches the app, when the user creates a new empty window, and when the user selects Open Location from the File menu.
@@ -15,7 +15,7 @@ I wrote this app to demonstrate my ability to write a Mac app in Objective-C. Al
 ## Areas for improvement:
 
 * The app only stores access tokens for the webpage text service in memory. Storing access tokens in the keychain would allow the app to reuse a still-valid access token after the app is quit and reopened.
-* Caching of webpage text responses would let the app redisplay webpage text content faster.
+* Caching of Webpage Text API responses would let the app redisplay article content faster.
 * I did not implement robust error handling in the share extension around handling non-HTTP(S) URLs, retrieving the URL from the extension context, or an inability to open the app with a URL.
 * VoiceOver works, but there is no ability to change the text size of the displayed article.
 
